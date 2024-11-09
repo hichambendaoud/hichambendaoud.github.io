@@ -1,20 +1,69 @@
-# Data Analyst
-### Technical Skills: Python, SQL, AWS, Azur, Power BI
-## Education
-- M.S., Informatique | The University of Errachidia (Sebtembre 2023)
-- B.S., Informatique | The University of Texas at Dallas (Sebtembre 2021)
-## Work Experience
-**Data Analyst @JobIntech (Avril - August 2024)
+# Hicham Ben Daoud 👋
 
-- Uncovered and corrected missing step in production data pipeline which impacted over 70% of active accounts
-- Redeveloped loan originations model which resulted in 50% improvement in model performance and saving 1 million dollars in potential losses
-- MAchine Lerning Intern Consultant @ ZJS Consultant (February - September 2023)
+👨‍💻 **Data Analyst | Data Scientist**  
+🎓 **Master's in Computer Science and Complex Systems Engineering**  
+🌍 **Passionate about Data Analysis, Machine Learning, and Business Intelligence**
 
-## Projects
-### Data-Driven EEG Band Discovery with Decision Trees
+---
 
-Developed objective strategy for discovering optimal EEG bands based on signal power spectra using Python. This data-driven approach led to better characterization of the underlying power spectrum by 
+## 👋 About Me
 
-### Decoding Physical and Cognitive Impacts of Particulate Matter Concentrations at Ultra-Fine Scales
-Publication
+I’m Hicham Ben Daoud, a data analyst with a strong foundation in data science, business intelligence, and AI. I hold a Master’s degree in Computer Science and Complex Systems Engineering, and I’m skilled in transforming data into actionable insights. Through hands-on experience, I’ve developed expertise in various data tools and languages to drive efficient analysis and decision-making.
 
+---
+
+## 🔧 Skills
+
+### Programming & Data Science
+- **Languages**: Python, Java, C/C++, PHP, JavaScript
+- **Data Analysis**: SQL, Transact-SQL, NoSQL (Neo4j), Pandas, NumPy
+- **Machine Learning & Deep Learning**: Scikit-learn, TensorFlow, Keras, PyTorch
+- **Data Visualization**: Power BI, Matplotlib, Seaborn, Plotly
+
+### Web Development & Tools
+- **Front-End**: HTML5, CSS3, JavaScript, Bootstrap
+- **Back-End**: Django
+- **Web Scraping**: Beautiful Soup, Selenium
+- **Database Management**: SQL, PostgreSQL, Oracle
+
+### DevOps & Cloud
+- **Platforms**: Microsoft Azure Cloud, Azure DevOps, GitHub, Docker, Kubernetes
+- **Project Management**: Agile methodology, Scrum framework
+
+---
+
+## 🏆 Projects
+
+### 1. **Customer Churn Analysis (Databel)**
+   - **Tools**: Power BI, SQL, Python
+   - Created measures and visualizations to investigate customer churn causes and develop strategies for retention.
+
+### 2. **Hospital Patient Records KPI Dashboard**
+   - **Tools**: Power BI, Streamlit, SQL
+   - Developed a KPI report for hospital management, analyzing patient admissions, stay durations, and costs.
+
+### 3. **Web Scraping and Data Visualization for Gitex Website**
+   - **Tools**: Python, Power BI, Beautiful Soup
+   - Scraped, cleaned, and visualized data from Gitex to evaluate companies and enhance reporting.
+
+### 4. **Speech-to-Text Application**
+   - **Tools**: Python, Django, Machine Learning
+   - Built a web application for audio-to-text conversion using machine learning and deep learning techniques.
+
+### 5. **Data Analysis of FIFA World Cup History (1930-2018)**
+   - **Tools**: Orange, Python
+   - Analyzed and preprocessed data for insights into historical world cup statistics.
+
+---
+
+## 📈 Experience Highlights
+
+- **Data Analyst Intern - JobInTech**: Enhanced data analysis and AI integration skills, working with Power BI and Microsoft Azure to support business decisions.
+- **Machine Learning Intern - ZJS Consulting**: Developed an audio content classification application, and applied advanced machine learning techniques.
+
+---
+
+## 📬 Contact
+
+- **LinkedIn**: [Hicham Ben Daoud](https://www.linkedin.com/in/hicham-ben-daoud-a40a80240/)
+- **Email**: hichambendaoudofficiel@gmail.com
