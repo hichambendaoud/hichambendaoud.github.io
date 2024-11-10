@@ -9,6 +9,7 @@
 ## 👋 About Me
 
 Junior Data Analyst with a Master’s degree in Computer Science and Complex Systems Engineering. I have developed skills in web data extraction, data modeling, manipulation, and visualization through various projects using Python, SQL, Power BI, and Tableau. From data collection to the creation of interactive dashboards, I am driven by the transformation of raw data into insights that support informed decision-making.
+
 ---
 
 ## 🔧 Skills
