@@ -7,8 +7,7 @@
 ---
 
 ## 👋 About Me
-Junior Data Analyst driven by transforming raw data into actionable insights.I hold a Master’s degree in Computer Science and Complex Systems Engineering, Skilled in data analysis, visualization, and applying machine learning and deep learning techniques. Proficient in leveraging cloud technologies to extract, clean, and analyze large datasets efficiently. Passionate about creating interactive dashboards and visualizations that empower stakeholders to make informed decisions. Open to collaboration and ready to take on new challenges, I leverage data and cloud technologies to drive business success.
-
+Junior Data Analyst with a Master’s degree in Computer Science and Complex Systems Engineering. I have developed skills in web data extraction, data modeling, manipulation, and visualization through various projects using Python, SQL, Power BI, and Tableau. From data collection to the creation of interactive dashboards, I am driven by the transformation of raw data into insights that support informed decision-making.
 ---
 
 ## 🔧 Skills
