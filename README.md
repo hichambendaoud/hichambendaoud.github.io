@@ -7,8 +7,7 @@
 ---
 
 ## 👋 About Me
-
-I’m Hicham Ben Daoud, a data analyst with a strong foundation in data science, business intelligence, and AI. I hold a Master’s degree in Computer Science and Complex Systems Engineering, and I’m skilled in transforming data into actionable insights. Through hands-on experience, I’ve developed expertise in various data tools and languages to drive efficient analysis and decision-making.
+Junior Data Analyst driven by transforming raw data into actionable insights.I hold a Master’s degree in Computer Science and Complex Systems Engineering, Skilled in data analysis, visualization, and applying machine learning and deep learning techniques. Proficient in leveraging cloud technologies to extract, clean, and analyze large datasets efficiently. Passionate about creating interactive dashboards and visualizations that empower stakeholders to make informed decisions. Open to collaboration and ready to take on new challenges, I leverage data and cloud technologies to drive business success.
 
 ---
 
