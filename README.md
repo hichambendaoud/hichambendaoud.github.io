@@ -39,6 +39,8 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 ### 2. **Hospital Patient Records KPI Dashboard**
    - **Tools**: Power BI, Streamlit, SQL
    - Developed a KPI report for hospital management, analyzing patient admissions, stay durations, and costs.
+   - **Project Link**: [View Project on GitHub](https://github.com/hichambendaoud/Patient-record)
+
 
 ### 3. **Web Scraping and Data Visualization for Gitex Website**
    - **Tools**: Python, Power BI, Beautiful Soup
