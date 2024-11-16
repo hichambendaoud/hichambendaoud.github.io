@@ -30,6 +30,13 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 
 ---
 
+## 📈 Experience Highlights
+
+- **Data Analyst Intern - JobInTech**: Enhanced data analysis and AI integration skills, working with Power BI and Microsoft Azure to support business decisions.
+- **Machine Learning Intern - ZJS Consulting**: Developed an audio content classification application, and applied advanced machine learning techniques.
+
+---
+
 ## 🏆 Projects
 
 ### 1. **Customer Churn Analysis (Databel)**
@@ -39,8 +46,6 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 ### 2. **Hospital Patient Records KPI Dashboard**
    - **Tools**: Power BI, Streamlit, SQL
    - Developed a KPI report for hospital management, analyzing patient admissions, stay durations, and costs.
-   - **Project Link**: [View Project on GitHub](https://github.com/hichambendaoud/Patient-record)
-
 
 ### 3. **Web Scraping and Data Visualization for Gitex Website**
    - **Tools**: Python, Power BI, Beautiful Soup
@@ -54,12 +59,6 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
    - **Tools**: Orange, Python
    - Analyzed and preprocessed data for insights into historical world cup statistics.
 
----
-
-## 📈 Experience Highlights
-
-- **Data Analyst Intern - JobInTech**: Enhanced data analysis and AI integration skills, working with Power BI and Microsoft Azure to support business decisions.
-- **Machine Learning Intern - ZJS Consulting**: Developed an audio content classification application, and applied advanced machine learning techniques.
 
 ---
 
