@@ -9,25 +9,24 @@
 Junior Data Analyst with a Master’s degree in Computer Science and Complex Systems Engineering. I have developed skills in web data extraction, data modeling, manipulation, and visualization through various projects using Python, SQL, Power BI, and Tableau. From data collection to the creation of interactive dashboards, I am driven by the transformation of raw data into insights that support informed decision-making.
 
 ---
-
-## 🔧 Skills
-
 ### Programming & Data Science
-- **Languages**: Python, Java, C/C++, PHP, JavaScript
-- **Data Analysis**: SQL, Transact-SQL, NoSQL (Neo4j), Pandas, NumPy
-- **Machine Learning & Deep Learning**: Scikit-learn, TensorFlow, Keras, PyTorch
-- **Data Visualization**: Power BI, Matplotlib, Seaborn, Plotly
+- **Languages et Outils**: Python, Java, C/C++, PHP, JavaScript, DAX.
+- **Statistiques et probabilités** :Analyse statistique, modélisation des probabilités, tests d'hypothèses.
+- **Analyse de données & Visualisation** : Pandas, NumPy, Seaborn, Matplotlib, Power BI, Orange.
+- **ETL & Data Pipelines** : Talend, Python, Orange, SSIS, SQL Server.
+- **Data Analysis**: SQL, Transact-SQL, NoSQL, Neo4j, PostgreSQL, gestion avec SSMS.
+- **Machine Learning & Deep Learning**: Scikit-learn, TensorFlow, Keras, PyTorch, NLTK, Spacy, OpenCV.
+- **Web Scraping**: Beautiful Soup, Selenium
 
 ### Web Development & Tools
-- **Front-End**: HTML5, CSS3, JavaScript, Bootstrap
-- **Back-End**: Django
-- **Web Scraping**: Beautiful Soup, Selenium
-- **Database Management**: SQL, PostgreSQL, Oracle
+- HTML5, CSS3, JavaScript, Bootstrap, Django,UML, Streamlit.
 
 ### DevOps & Cloud
-- **Platforms**: Microsoft Azure Cloud, Azure DevOps, GitHub, Docker, Kubernetes
+- **Platforms**: Microsoft Azure Cloud, Azure DevOps, GitHub, Docker.
 - **Project Management**: Agile methodology, Scrum framework
 
+### Soft Skills :
+- Communication, Autonome, Esprit d’équipe, Résolution de problèmes, Esprit d’apprentissage, Esprit Analytique et synthétique.
 ---
 
 ## 📈 Experience Highlights
