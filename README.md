@@ -27,6 +27,7 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 
 ### Soft Skills :
 - Communication, Autonome, Esprit d’équipe, Résolution de problèmes, Esprit d’apprentissage, Esprit Analytique et synthétique.
+  
 ---
 
 ## 📈 Experience Highlights
