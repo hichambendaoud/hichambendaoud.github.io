@@ -65,6 +65,7 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 ### 6. **Data Analysis of FIFA World Cup History (1930-2018)**
    - **Tools**: Orange, Python
    - Analyzed and preprocessed data for insights into historical world cup statistics.
+   - **GitHub Repository**: [FIFA World Cup History](https://github.com/hichambendaoud/FIFA_World_Cup_History.git)
    
 
 ---
