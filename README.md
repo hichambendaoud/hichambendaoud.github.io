@@ -43,28 +43,30 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
    - Built an interactive dashboard to track conversion rates, engagement, and feedback trends.
    - **GitHub Repository**: [Marketing Analytics case](https://github.com/hichambendaoud/Marketing-Analytics-Business.git)
 
-### 2. **Customer Churn Analysis (Databel)**
-   - **Tools**: Power BI, SQL, Python
-   - Created measures and visualizations to investigate customer churn causes and develop strategies for retention.
-
-### 3. **Hospital Patient Records KPI Dashboard**
+### 2. **Hospital Patient Records KPI Dashboard**
    - **Tools**: Power BI, Streamlit, SQL
    - Developed a KPI report for hospital management, analyzing patient admissions, stay durations, and costs.
    - **GitHub Repository**: [Hospital Patient Records KPI Dashboard](https://github.com/hichambendaoud/Patient-record.git)
 
-### 4. **Web Scraping and Data Visualization for Gitex Website**
+### 3. **Web Scraping and Data Visualization for Gitex Website**
    - **Tools**: Python, Power BI, Beautiful Soup
    - Scraped, cleaned, and visualized data from Gitex to evaluate companies and enhance reporting.
    - **GitHub Repository**: [Web Scraping and Data Visualization for Gitex](https://github.com/hichambendaoud/Gitex-Scraping-Project.git)
 
+### 4. **Customer Churn Analysis (Databel)**
+   - **Tools**: Power BI, SQL, Python
+   - Created measures and visualizations to investigate customer churn causes and develop strategies for retention.
+   - **GitHub Repository**: [Customer Churn Analysis](https://github.com/hichambendaoud/Customer-Churn-Analysis-Databel..git)
+
 ### 5. **Speech-to-Text Application**
    - **Tools**: Python, Django, Machine Learning
    - Built a web application for audio-to-text conversion using machine learning and deep learning techniques.
+   - **GitHub Repository**: 
 
 ### 6. **Data Analysis of FIFA World Cup History (1930-2018)**
    - **Tools**: Orange, Python
    - Analyzed and preprocessed data for insights into historical world cup statistics.
-
+   
 
 ---
 
