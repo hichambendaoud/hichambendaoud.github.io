@@ -61,7 +61,6 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 ### 5. **Speech-to-Text Application**
    - **Tools**: Python, Django, Machine Learning
    - Built a web application for audio-to-text conversion using machine learning and deep learning techniques.
-   - **GitHub Repository**: 
 
 ### 6. **Data Analysis of FIFA World Cup History (1930-2018)**
    - **Tools**: Orange, Python
