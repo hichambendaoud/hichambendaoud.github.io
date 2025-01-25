@@ -10,19 +10,18 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
 
 ---
 ### Programming & Data Science
-- **Languages et Outils**: Python, Java, C/C++, PHP, JavaScript, DAX.
-- **Statistiques et probabilités** :Analyse statistique, modélisation des probabilités, tests d'hypothèses.
-- **Analyse de données & Visualisation** : Pandas, NumPy, Seaborn, Matplotlib, Power BI, Orange.
-- **ETL & Data Pipelines** : Talend, Python, Orange, SSIS, SQL Server.
-- **Data Analysis**: SQL, Transact-SQL, NoSQL, Neo4j, PostgreSQL, gestion avec SSMS.
-- **Machine Learning & Deep Learning**: Scikit-learn, TensorFlow, Keras, PyTorch, NLTK, Spacy, OpenCV.
-- **Web Scraping**: Beautiful Soup, Selenium
+- **Langages et Outils :** Python, Java, C/C++, PHP, JavaScript, DAX.
+- **Statistiques et probabilités :** Analyse statistique, modélisation des probabilités.
+- **Machine Learning & Deep Learning :** Scikit-learn, TensorFlow, Keras, PyTorch.
+- **Analyse de données & Visualisation :** Pandas, NumPy, Seaborn, Matplotlib, Power BI, Tableau, Excel.
+- **ETL & Data Pipelines :** Talend, Python, Orange, SSIS, SQL Server.
+- **Bases de données :** SQL, Transact-SQL, NoSQL, Neo4j, PostgreSQL, SSMS.
 
 ### Web Development & Tools
 - HTML5, CSS3, JavaScript, Bootstrap, Django,UML, Streamlit.
 
 ### DevOps & Cloud
-- **Platforms**: Microsoft Azure Cloud, Azure DevOps, GitHub, Docker.
+- **Platforms**: Microsoft Azure Cloud, Azure DevOps, GitHub.
 - **Project Management**: Agile methodology, Scrum framework
 
 ### Soft Skills :
@@ -66,8 +65,7 @@ Junior Data Analyst with a Master’s degree in Computer Science and Complex Sys
    - **Tools**: Orange, Python
    - Analyzed and preprocessed data for insights into historical world cup statistics.
    - **GitHub Repository**: [FIFA World Cup History](https://github.com/hichambendaoud/FIFA_World_Cup_History.git)
-   
-
+  
 ---
 
 ## 📬 Contact
