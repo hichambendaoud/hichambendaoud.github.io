@@ -1,74 +1,102 @@
-👨‍💻 **Data Analyst | Data Scientist**  
-🎓 **Master's in Computer Science and Complex Systems Engineering**  
-🌍 **Passionate about Data Analysis, Machine Learning, and Business Intelligence**
+# 👨‍💻 Hicham Ben Daoud – Portfolio
+
+🎓 **Master’s in Computer Science and Complex Systems Engineering**  
+💼 **Data Analyst | AI Enthusiast**  
+🌍 Passionate about Data Analysis, Artificial Intelligence, and Business Intelligence
 
 ---
 
-## About Me
+## 📌 About Me
 
-Junior Data Analyst with a Master’s degree in Computer Science and Complex Systems Engineering. I have developed skills in web data extraction, data modeling, manipulation, and visualization through various projects using Python, SQL, Power BI, and Tableau. From data collection to the creation of interactive dashboards, I am driven by the transformation of raw data into insights that support informed decision-making.
-
----
-### Programming & Data Science
-- **Langages et Outils :** Python, Java, C/C++, PHP, JavaScript, DAX.
-- **Statistiques et probabilités :** Analyse statistique, modélisation des probabilités.
-- **Machine Learning & Deep Learning :** Scikit-learn, TensorFlow, Keras, PyTorch.
-- **Analyse de données & Visualisation :** Pandas, NumPy, Seaborn, Matplotlib, Power BI, Tableau, Excel.
-- **ETL & Data Pipelines :** Talend, Python, Orange, SSIS, SQL Server.
-- **Bases de données :** SQL, Transact-SQL, NoSQL, Neo4j, PostgreSQL, SSMS.
-
-### Web Development & Tools
-- HTML5, CSS3, JavaScript, Bootstrap, Django,UML, Streamlit.
-
-### DevOps & Cloud
-- **Platforms**: Microsoft Azure Cloud, Azure DevOps, GitHub.
-- **Project Management**: Agile methodology, Scrum framework
-
-### Soft Skills :
-- Communication, Autonome, Esprit d’équipe, Résolution de problèmes, Esprit d’apprentissage, Esprit Analytique et synthétique.
-  
----
-
-## 📈 Experience Highlights
-
-- **Data Analyst Intern - JobInTech**: Enhanced data analysis and AI integration skills, working with Power BI and Microsoft Azure to support business decisions.
-- **Machine Learning Intern - ZJS Consulting**: Developed an audio content classification application, and applied advanced machine learning techniques.
+Junior Data Analyst holding a Master’s in Computer Science and Complex Systems Engineering, passionate about leveraging data and AI to solve real-world problems. Experienced in data extraction, modeling, manipulation, and visualization using Python, SQL, Power BI, and Tableau. My mission is to transform raw data into actionable insights and explore the impact of AI on data workflows.
 
 ---
 
-## 🏆 Projects
-### 1. **Marketing Analytics case**
-   - **Tools**: Power BI, SQL, Python
-   - Built an interactive dashboard to track conversion rates, engagement, and feedback trends.
-   - **GitHub Repository**: [Marketing Analytics case](https://github.com/hichambendaoud/Marketing-Analytics-Business.git)
+## 📈 Experience
 
-### 2. **Hospital Patient Records KPI Dashboard**
-   - **Tools**: Power BI, Streamlit, SQL
-   - Developed a KPI report for hospital management, analyzing patient admissions, stay durations, and costs.
-   - **GitHub Repository**: [Hospital Patient Records KPI Dashboard](https://github.com/hichambendaoud/Patient-record.git)
+### 💼 Data Analyst Intern – JobInTech
+- Designed and optimized interactive dashboards using Power BI, providing real-time insights into key business metrics.
+- Collaborated with the AI team to integrate Microsoft Azure AI services, enhancing predictive analytics capabilities.
+- Analyzed complex datasets to identify trends and patterns, delivering actionable recommendations that informed strategic business decisions.
+- Worked closely with stakeholders to understand data needs and deliver tailored analytical solutions.
 
-### 3. **Web Scraping and Data Visualization for Gitex Website**
-   - **Tools**: Python, Power BI, Beautiful Soup
-   - Scraped, cleaned, and visualized data from Gitex to evaluate companies and enhance reporting.
-   - **GitHub Repository**: [Web Scraping and Data Visualization for Gitex](https://github.com/hichambendaoud/Gitex-Scraping-Project.git)
+### 💼 Master’s Final Project – ZJS CONSULTING
+- Engineered a text generation model utilizing advanced machine learning and deep learning techniques, improving content creation processes.
+- Built a user-friendly web application using Django, enabling seamless speech-to-text conversion and integrating machine learning APIs for enhanced accuracy.
 
-### 4. **Customer Churn Analysis (Databel)**
-   - **Tools**: Power BI, SQL, Python
-   - Created measures and visualizations to investigate customer churn causes and develop strategies for retention.
-   - **GitHub Repository**: [Customer Churn Analysis](https://github.com/hichambendaoud/Customer-Churn-Analysis-Databel..git)
+---
 
-### 5. **Speech-to-Text Application**
-   - **Tools**: Python, Django, Machine Learning
-   - Built a web application for audio-to-text conversion using machine learning and deep learning techniques.
+## 🛠️ Skills
 
-### 6. **Data Analysis of FIFA World Cup History (1930-2018)**
-   - **Tools**: Orange, Python
-   - Analyzed and preprocessed data for insights into historical world cup statistics.
-   - **GitHub Repository**: [FIFA World Cup History](https://github.com/hichambendaoud/FIFA_World_Cup_History.git)
-  
+**Languages:**  
+Python, SQL, Java, JavaScript
+
+**Business Intelligence Tools:**  
+Power BI, Tableau, Excel
+
+**Libraries & Frameworks:**  
+- Data Analysis & Visualization: Pandas, NumPy, Seaborn, Matplotlib  
+- Web Scraping: BeautifulSoup, Selenium  
+- Machine Learning & Deep Learning: Scikit-learn, TensorFlow, Keras
+
+**ETL & Data Pipelines:**  
+Talend, Python, Power Query, Tableau Prep Builder
+
+**Databases:**  
+Neo4j, PostgreSQL, SQL Server
+
+**DevOps & Cloud:**  
+Microsoft Azure, Azure DevOps, GitHub, Scrum
+
+**Soft Skills:**  
+Autonomous, Collaborative mindset, Curious, Problem-solving
+
+---
+
+## 🧠 Projects
+
+### 📊 1. Marketing Analytics for an E-commerce Website
+- **Tools:** Power BI, SQL, Python  
+- Built a dashboard to analyze conversion rates, customer engagement, and feedback.  
+- Performed sentiment analysis with Python for actionable marketing strategies.  
+- **GitHub:** [Marketing Analytics Case](https://github.com/hichambendaoud/Marketing-Analytics-Business)
+
+### 🏥 2. Hospital Patient Data Analysis
+- **Tools:** Power BI, Streamlit, SQL, Python  
+- Cleaned and modeled hospital patient data using a star schema.  
+- Created an interactive KPI dashboard for admissions, readmissions, average stay duration, average cost, and insurance coverage.  
+- **GitHub:** [Hospital Patient Records KPI Dashboard](https://github.com/hichambendaoud/Patient-record)
+
+### 🕸️ 3. Gitex Web Scraping & Data Visualization
+- **Tools:** Python, BeautifulSoup, Power BI  
+- Scraped and cleaned data from the Gitex website to extract company information.  
+- Visualized data in Power BI to identify IT service sales prospects.  
+- **GitHub:** [Gitex Scraping Project](https://github.com/hichambendaoud/Gitex-Scraping-Project)
+
+### 📉 4. Customer Churn Analysis (Databel)
+- **Tools:** Power BI, SQL, Python  
+- Analyzed customer behavior and built retention strategies.  
+- Created custom measures and visuals to track churn trends.  
+- **GitHub:** [Customer Churn Analysis](https://github.com/hichambendaoud/Customer-Churn-Analysis-Databel)
+
+### 🎙️ 5. Speech-to-Text Application
+- **Tools:** Python, Django, Machine Learning  
+- Developed a web app to convert audio to text using ML/DL models.  
+- Integrated a machine learning API to enhance accuracy.  
+- **GitHub:** [Speech-to-Text Application](https://github.com/hichambendaoud/Speech-to-Text-Application)
+
+### ⚽ 6. FIFA World Cup History Analysis (1930–2018)
+- **Tools:** Orange, Python  
+- Cleaned and analyzed historical data to identify trends across World Cup editions.  
+- **GitHub:** [FIFA World Cup History](https://github.com/hichambendaoud/FIFA_World_Cup_History)
+
 ---
 
 ## 📬 Contact
 
-- **LinkedIn**: [Hicham Ben Daoud](https://www.linkedin.com/in/hicham-ben-daoud-a40a80240/)
-- **Email**: hichambendaoudofficiel@gmail.com
+- **LinkedIn:** [Hicham Ben Daoud](https://www.linkedin.com/in/hicham-ben-daoud-a40a80240/)  
+- **Email:** [hichambendaoudd@gmail.com](mailto:hichambendaoudd@gmail.com)
+
+---
+
+⭐ Feel free to explore my projects and connect with me for collaboration or opportunities in Data & AI!
