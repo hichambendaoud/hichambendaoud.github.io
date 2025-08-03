@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Linkedin } from "lucide-react";
+import { Download, Mail, Linkedin, Github } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -33,16 +33,23 @@ const Hero = () => {
               </Button>
             </div>
 
-            {/* LinkedIn */}
-            <div className="flex items-center space-x-4">
+            {/* Social Links */}
+            <div className="flex items-center space-x-6">
               <a
                 href="https://linkedin.com/in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group"
               >
-                <Linkedin className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">linkedin.com/in/</span>
+                <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group"
+              >
+                <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
