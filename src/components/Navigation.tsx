@@ -20,22 +20,33 @@ const Navigation = () => {
 
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.3,
-      rootMargin: "-80px 0px -80px 0px",
+      threshold: 0.5,
+      rootMargin: "-100px 0px -50% 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
+      let mostVisible = null;
+      let maxRatio = 0;
+
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+        if (entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          mostVisible = entry.target;
         }
       });
+
+      if (mostVisible) {
+        setActiveSection(mostVisible.id);
+      }
     }, observerOptions);
 
     // Only observe sections on the home page
     if (location.pathname === "/") {
-      const sections = document.querySelectorAll("section[id]");
-      sections.forEach((section) => observer.observe(section));
+      // Add a small delay to ensure DOM is ready
+      setTimeout(() => {
+        const sections = document.querySelectorAll("section[id]");
+        sections.forEach((section) => observer.observe(section));
+      }, 100);
     }
 
     return () => observer.disconnect();
