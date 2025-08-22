@@ -83,7 +83,7 @@ Autonomous, Collaborative mindset, Curious, Problem-solving
 - **Tools:** Power BI, SQL, Python  
 - Analyzed customer behavior and built retention strategies.  
 - Created custom measures and visuals to track churn trends.  
-- **GitHub:** [Customer Churn Analysis](https://github.com/hichambendaoud/Customer-Churn-Analysis-Databel..git)
+- **GitHub:** [Customer Churn Analysis](https://github.com/hichambendaoud/Customer-Churn-Analysis-Databel.git)
 
 ### 🎙️ 6. Speech-to-Text Application
 - **Tools:** Python, Django, Machine Learning  
