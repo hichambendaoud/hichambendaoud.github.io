@@ -58,10 +58,15 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-elegant">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground transition-transform duration-300 hover:scale-105">
+                  {/* <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <span className="text-white text-6xl font-bold">DA</span>
-                  </div>
+                  </div> */}
+                  <img
+                      src="/images/profile.png"
+                      alt="Hicham Ben Daoud"
+                      className="w-full h-full object-cover"
+                    />
                 </div>
               </div>
               
