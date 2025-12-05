@@ -9,19 +9,19 @@ const ProjectsList = () => {
   const allProjects = [
     {
       id: "sales-performance-dashboard",
-      title: "Sales Performance Power BI Dashboard",
+      title: "HR Analytics Dashboard (Tableau Project)",
       description: "Interactive Power BI report showing sales trends, regional performance, and KPI tracking.",
       category: "Business Intelligence",
-      image: "/lovable-uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png",
-      technologies: ["Power BI", "SQL", "DAX", "Azure Data Factory"],
+      image: "/lovable-uploads/HR_Dashboard/RHdash.png",
+      technologies: ["Tableau", "Python"],
       featured: true
     },
     {
       id: "customer-segmentation-tableau",
-      title: "Customer Segmentation with Tableau",
+      title: "Marketing Analytics for an E-commerce Website",
       description: "Tableau dashboard performing RFM segmentation and cohort analysis for marketing campaigns.",
       category: "Data Visualization",
-      image: "/lovable-uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png",
+      image: "/lovable-uploads/Marketing_Analytics/Overview.PNG",
       technologies: ["Tableau", "Python", "Pandas", "SQL"],
       featured: true
     },
@@ -36,11 +36,20 @@ const ProjectsList = () => {
     },
     {
       id: "data-visualization-platform",
-      title: "Custom Data Visualization Platform",
+      title: "Hospital Patient Data Analysis",
       description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
       category: "Data Science",
-      image: "/lovable-uploads/3b82656f-6846-4cca-bdc7-e81d0184db2e.png",
+      image: "/lovable-uploads/Hospital_Patien/Dashboard_Overview.PNG",
       technologies: ["D3.js", "Python", "Flask", "PostgreSQL"],
+      featured: false
+    },
+     {
+      id: "data-visualization-platform1",
+      title: "Gitex Web Scraping & Data Visualization",
+      description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
+      category: "Data Science",
+      image: "/lovable-uploads/Gitex_Web_Scraping/dashboard_preview.png",
+      technologies: ["Power BI", "Python", "excel"],
       featured: false
     },
     {
@@ -102,13 +111,21 @@ const ProjectsList = () => {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                      <Button size="sm" variant="glass" className="flex-1">
-                        <Eye className="mr-2 h-4 w-4" />
-                        View
-                      </Button>
-                      <Button size="sm" variant="glass">
-                        <Github className="h-4 w-4" />
-                      </Button>
+                      <Link to={`/projects/${project.id}`} className="flex-1">
+                        <Button size="sm" variant="glass" className="w-full">
+                          <Eye className="mr-2 h-4 w-4" />
+                          View
+                        </Button>
+                      </Link>
+                      <a
+                        href="https://github.com/hichambendaoud" // Replace with project.github if available
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button size="sm" variant="glass">
+                          <Github className="h-4 w-4" />
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>
