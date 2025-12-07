@@ -2,15 +2,16 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ExternalLink, Github, Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, ExternalLink, Github, Eye, ChevronLeft, ChevronRight, AlertCircle, Maximize2 } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Mock project data
+  // Project Data matching your portfolio
   const projects: Record<string, any> = {
     "sales-performance-dashboard": {
       title: "HR Analytics Dashboard (Tableau Project)",
@@ -88,10 +89,9 @@ const ProjectDetail = () => {
         demo: "#",
         code: "#"
       }
-    }
-    ,
+    },
     "data-visualization-platform1": {
-      title: "Hospital Patient Data Analysis",
+      title: "Gitex Web Scraping & Data Visualization",
       category: "Data Science",
       description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
       fullDescription: "Built a sophisticated data visualization platform from scratch using modern web technologies to handle complex, multi-dimensional datasets that traditional tools couldn't manage effectively.",
@@ -109,21 +109,62 @@ const ProjectDetail = () => {
         demo: "#",
         code: "#"
       }
+    },
+    "machine-learning-pipeline": {
+      title: "Machine Learning Pipeline",
+      category: "Machine Learning",
+      description: "End-to-end ML pipeline for predictive analytics using Python and scikit-learn.",
+      fullDescription: "Complete machine learning workflow from data preprocessing to model deployment, featuring automated feature selection and hyperparameter tuning.",
+      image: ["/lovable-uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png"],
+      technologies: ["Python", "scikit-learn", "Pandas", "Flask"],
+      problem: "Manual model training was inefficient and lacked reproducibility.",
+      solution: "Built an automated pipeline with version control for data and models.",
+      results: [
+        "Reduced time-to-production by 50%",
+        "Improved model accuracy by 15%",
+        "Standardized deployment process"
+      ],
+      links: { demo: "#", code: "#" }
+    },
+    "real-time-analytics": {
+      title: "Real-time Analytics Dashboard",
+      category: "Real-time Analytics",
+      description: "Real-time data analytics dashboard using Apache Kafka and Elasticsearch.",
+      fullDescription: "High-throughput real-time analytics platform capable of processing millions of events per second with sub-second latency.",
+      image: ["/lovable-uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png"],
+      technologies: ["Kafka", "Elasticsearch", "React", "Python"],
+      problem: "Existing batch processing could not provide immediate insights for time-critical decisions.",
+      solution: "Implemented a streaming architecture using Kafka and Elasticsearch.",
+      results: [
+        "Achieved sub-second data latency",
+        "Scaled to handle 50k events/second",
+        "Enabled real-time fraud detection"
+      ],
+      links: { demo: "#", code: "#" }
     }
   };
 
   const project = projects[slug || ""];
+  
   if (!project) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-[#0B1120] text-slate-200 flex flex-col">
         <Navigation />
-        <div className="pt-20 flex items-center justify-center min-h-screen">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center px-4">
+            <div className="flex justify-center mb-4">
+              <div className="p-4 bg-slate-800/50 rounded-full">
+                <AlertCircle className="h-12 w-12 text-slate-400" />
+              </div>
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Project Not Found</h1>
+            <p className="text-xl text-slate-400 mb-8 max-w-lg mx-auto">
+              The project you are looking for might have been removed or the link is incorrect.
+            </p>
             <Link to="/projects">
-              <Button variant="outline">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Projects
+              <Button variant="outline" className="h-12 px-8 text-base border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-300">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Return to Projects
               </Button>
             </Link>
           </div>
@@ -135,159 +176,248 @@ const ProjectDetail = () => {
   const images = Array.isArray(project.image) ? project.image : [project.image];
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    if (currentImageIndex < images.length - 1) {
+      setCurrentImageIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   const handlePrevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    if (currentImageIndex > 0) {
+      setCurrentImageIndex((prevIndex) => prevIndex - 1);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0B1120] text-slate-200">
       <Navigation />
-      <div className="pt-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="pt-24 pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
-          <Link to="/projects" className="inline-block mb-8 animate-fade-in">
-            <Button variant="ghost" className="group">
-              <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-              Back to Projects
-            </Button>
-          </Link>
+          <div className="mb-8 animate-fade-in">
+            <Link to="/projects">
+              <Button variant="ghost" className="group text-slate-400 hover:text-white hover:bg-slate-800/50 pl-0">
+                <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+                Back to Projects
+              </Button>
+            </Link>
+          </div>
 
           {/* Project Images Carousel */}
           {images.length > 0 && (
-            <div className="relative mb-12 animate-fade-in">
-              <img
-                src={images[currentImageIndex]}
-                alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                className="w-full rounded-lg shadow-elegant max-h-[500px] object-contain"
-              />
+            <div className="relative mb-12 animate-fade-in group">
+              <div className="overflow-hidden rounded-xl border border-slate-800 shadow-2xl bg-[#111827]">
+                <img
+                  src={images[currentImageIndex]}
+                  alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                  className="w-full max-h-[600px] object-contain bg-[#020817]"
+                />
+              </div>
 
-              {/* Left Arrow - show only if not first image */}
-              {currentImageIndex > 0 && (
-                <button
-                  onClick={handlePrevImage}
-                  className="absolute -left-10 top-1/2 -translate-y-1/2 text-foreground/70 hover:text-primary hover:scale-110 transition duration-200"
-                  style={{ zIndex: 2 }}
-                >
-                  <ChevronLeft className="h-8 w-8" />
-                </button>
+              {/* Full Screen Trigger - Top Right */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button 
+                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                    aria-label="View Fullscreen"
+                  >
+                    <Maximize2 className="h-5 w-5" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-[95vw] h-[90vh] bg-[#0B1120]/95 border-slate-800 p-0 flex items-center justify-center focus:outline-none">
+                    <div className="relative w-full h-full flex items-center justify-center group/fullscreen">
+                        <img
+                            src={images[currentImageIndex]}
+                            alt={`${project.title} full screenshot`}
+                            className="max-w-full max-h-full object-contain"
+                        />
+                        
+                        {/* Fullscreen Navigation */}
+                        {images.length > 1 && (
+                            <>
+                                {currentImageIndex > 0 && (
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handlePrevImage();
+                                        }}
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                                        aria-label="Previous image"
+                                    >
+                                        <ChevronLeft className="h-8 w-8" />
+                                    </button>
+                                )}
+
+                                {currentImageIndex < images.length - 1 && (
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleNextImage();
+                                        }}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                                        aria-label="Next image"
+                                    >
+                                        <ChevronRight className="h-8 w-8" />
+                                    </button>
+                                )}
+                            </>
+                        )}
+                    </div>
+                </DialogContent>
+              </Dialog>
+
+              {/* Navigation Arrows - Only show if multiple images and not at edges */}
+              {images.length > 1 && (
+                <>
+                  {currentImageIndex > 0 && (
+                    <button
+                      onClick={handlePrevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                      style={{ zIndex: 2 }}
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                  )}
+
+                  {currentImageIndex < images.length - 1 && (
+                    <button
+                      onClick={handleNextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                      style={{ zIndex: 2 }}
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                  )}
+                </>
               )}
-
-              {/* Right Arrow - show only if not last image */}
-              {currentImageIndex < images.length - 1 && (
-                <button
-                  onClick={handleNextImage}
-                  className="absolute -right-10 top-1/2 -translate-y-1/2 text-foreground/70 hover:text-primary hover:scale-110 transition duration-200"
-                  style={{ zIndex: 2 }}
-                >
-                  <ChevronRight className="h-8 w-8" />
-                </button>
+              
+              {/* Dots Indicator - Hidden unless hovering */}
+              {images.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {images.map((_, idx) => (
+                    <div 
+                      key={idx}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-white w-4' : 'bg-white/40 hover:bg-white/60'}`}
+                    />
+                  ))}
+                </div>
               )}
             </div>
           )}
 
-          {/* Project Header */}
-          <div className="mb-12 animate-fade-in-up">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                {project.category}
-              </Badge>
+          <div className="grid lg:grid-cols-12 gap-12">
+            {/* Main Content Column */}
+            <div className="lg:col-span-8 space-y-12">
+              {/* Project Header */}
+              <div className="animate-fade-in-up">
+                <div className="flex items-center gap-3 mb-4">
+                  <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/20 px-3 py-1 text-sm font-medium">
+                    {project.category}
+                  </Badge>
+                </div>
+                <h1 className="text-3xl lg:text-5xl font-bold mb-6 text-white leading-tight">
+                  {project.title}
+                </h1>
+                <p className="text-lg text-slate-400 leading-relaxed border-l-2 border-slate-700 pl-4">
+                  {project.fullDescription}
+                </p>
+              </div>
+
+              {/* Details Sections */}
+              <div className="space-y-8">
+                {/* Problem Section */}
+                <div className="animate-fade-in delay-100">
+                   <h3 className="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                     <span className="w-1 h-8 bg-red-500 rounded-full"></span>
+                     The Problem
+                   </h3>
+                   <Card className="bg-[#111827] border-slate-800 shadow-sm">
+                      <CardContent className="p-6">
+                        <p className="text-slate-300 leading-relaxed text-lg">{project.problem}</p>
+                      </CardContent>
+                   </Card>
+                </div>
+
+                {/* Solution Section */}
+                <div className="animate-fade-in delay-200">
+                   <h3 className="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                     <span className="w-1 h-8 bg-blue-500 rounded-full"></span>
+                     The Solution
+                   </h3>
+                   <Card className="bg-[#111827] border-slate-800 shadow-sm">
+                      <CardContent className="p-6">
+                        <p className="text-slate-300 leading-relaxed text-lg">{project.solution}</p>
+                      </CardContent>
+                   </Card>
+                </div>
+
+                {/* Results Section */}
+                <div className="animate-fade-in delay-300">
+                   <h3 className="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                     <span className="w-1 h-8 bg-emerald-500 rounded-full"></span>
+                     Results & Impact
+                   </h3>
+                   <Card className="bg-[#111827] border-slate-800 shadow-sm">
+                      <CardContent className="p-6">
+                        <ul className="space-y-4">
+                          {project.results.map((result: string, index: number) => (
+                            <li key={index} className="flex items-start text-slate-300">
+                              <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2.5 mr-4 flex-shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                              <span className="leading-relaxed text-lg">{result}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                   </Card>
+                </div>
+              </div>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              {project.title}
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              {project.fullDescription}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                <Button variant="hero" className="group">
-                  <Eye className="mr-2 h-4 w-4" />
-                  Live Demo
-                </Button>
-              </a>
-              <a href={project.links.code} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="group">
-                  <Github className="mr-2 h-4 w-4" />
-                  View Code
-                </Button>
-              </a>
-            </div>
-          </div>
 
-          {/* Project Content */}
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-8">
-              {/* Problem Section */}
-              <Card className="border-l-4 border-l-destructive/50 animate-fade-in">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4 text-destructive">The Problem</h3>
-                  <p className="text-muted-foreground leading-relaxed">{project.problem}</p>
-                </CardContent>
-              </Card>
-
-              {/* Solution Section */}
-              <Card className="border-l-4 border-l-primary/50 animate-fade-in">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4 text-primary">The Solution</h3>
-                  <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
-                </CardContent>
-              </Card>
-
-              {/* Results Section */}
-              <Card className="border-l-4 border-l-accent/50 animate-fade-in">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4 text-accent">Results & Impact</h3>
-                  <ul className="space-y-3">
-                    {project.results.map((result: string, index: number) => (
-                      <li key={index} className="flex items-start">
-                        <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-muted-foreground">{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Technologies */}
-              <Card className="animate-fade-in">
-                <CardContent className="p-6">
-                  <h4 className="font-bold mb-4">Technologies Used</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech: string) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project Links */}
-              <Card className="animate-fade-in">
-                <CardContent className="p-6">
-                  <h4 className="font-bold mb-4">Project Links</h4>
-                  <div className="space-y-3">
-                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="w-full justify-start">
-                        <ExternalLink className="mr-2 h-4 w-4" />
+            {/* Sidebar Column */}
+            <div className="lg:col-span-4 space-y-8">
+              {/* Quick Links Card */}
+              <div className="sticky top-24 space-y-6">
+                <Card className="bg-[#111827] border-slate-800 animate-fade-in shadow-lg">
+                  <CardHeader className="border-b border-slate-800 pb-4">
+                    <CardTitle className="text-lg font-bold text-white">Project Links</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6 space-y-4">
+                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="block">
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0 h-11 shadow-lg shadow-blue-900/20">
+                        <Eye className="mr-2 h-4 w-4" />
                         Live Demo
                       </Button>
                     </a>
-                    <a href={project.links.code} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="w-full justify-start">
+                    <a href={project.links.code} target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white h-11">
                         <Github className="mr-2 h-4 w-4" />
                         Source Code
                       </Button>
                     </a>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+
+                {/* Technologies Card */}
+                <Card className="bg-[#111827] border-slate-800 animate-fade-in shadow-lg">
+                  <CardHeader className="border-b border-slate-800 pb-4">
+                    <CardTitle className="text-lg font-bold text-white">Technologies</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech: string) => (
+                        <Badge 
+                          key={tech} 
+                          variant="secondary" 
+                          className="bg-slate-800 text-slate-300 hover:bg-slate-700 border-slate-700 px-3 py-1"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>

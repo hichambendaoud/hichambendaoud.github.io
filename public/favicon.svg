@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background: Gradient Circle (Modern Tech Blue) -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="240" fill="url(#grad1)" />
+
+  <!-- Icon: Bar Chart + Initials "HB" integrated -->
+  <g fill="white">
+    <!-- Left Bar (H) -->
+    <rect x="130" y="150" width="50" height="212" rx="10" />
+    <!-- Middle Bar (Connection/Data Flow) -->
+    <rect x="130" y="240" width="120" height="40" rx="10" />
+    <!-- Right Bar (B/Chart) -->
+    <rect x="250" y="150" width="50" height="212" rx="10" />
+    
+    <!-- Data Points (Dots) for "Analysis" feel -->
+    <circle cx="360" cy="180" r="25" />
+    <circle cx="360" cy="330" r="25" />
+  </g>
+</svg>
