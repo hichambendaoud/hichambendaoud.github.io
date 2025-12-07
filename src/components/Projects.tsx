@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { Github, Eye, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
@@ -32,31 +32,13 @@ const Projects = () => {
       image: "/lovable-uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
       technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
       featured: false
-    },
-    {
-      id: "data-visualization-platform",
-      title: "Hospital Patient Data Analysis",
-      description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
-      category: "Data Science",
-      image: "/lovable-uploads/Hospital_Patien/Dashboard_Overview.PNG",
-      technologies: ["D3.js", "Python", "Flask", "PostgreSQL"],
-      featured: false
-    },
-    {
-      id: "data-visualization-platform1",
-      title: "Hospital Patient Data Analysis",
-      description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
-      category: "Data Science",
-      image: "/lovable-uploads/Gitex_Web_Scraping/dashboard_preview.png",
-      technologies: ["Power BI", "Python", "excel"],
-      featured: false
     }
   ];
 
   return (
     <section id="projects" className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Projects Showcase
@@ -67,74 +49,66 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
               className="group overflow-hidden hover:shadow-card transition-all duration-500 animate-fade-in border-0 bg-card/50 backdrop-blur-sm"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="relative overflow-hidden">
+              {/* Image Container - Now a Link */}
+              <Link to={`/projects/${project.id}`} className="block relative overflow-hidden cursor-pointer">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                    <Link to={`/projects/${project.id}`} className="flex-1">
-                      <Button size="sm" variant="glass" className="w-full">
-                        <Eye className="mr-2 h-4 w-4" />
-                        View Details
-                      </Button>
-                    </Link>
-                    <a
-                      href="https://github.com/hichambendaoud" // Replace with project.github if available
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button size="sm" variant="glass">
-                        <Github className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-              </div>
+                {/* Subtle overlay on hover only, no buttons */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
 
-              <CardHeader>
+              <CardHeader className="p-4 pb-2">
                 <div className="flex items-start justify-between mb-2">
-                  <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
+                  <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 text-xs">
                     {project.category}
                   </Badge>
                 </div>
-                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </CardTitle>
+                <Link to={`/projects/${project.id}`}>
+                  <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors duration-300 line-clamp-1">
+                    {project.title}
+                  </CardTitle>
+                </Link>
               </CardHeader>
 
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="p-4 pt-0 space-y-3">
+                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5">
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-2">
+                <div className="flex gap-2 pt-2">
                   <Link to={`/projects/${project.id}`} className="flex-1">
-                    <Button variant="outline" className="w-full group" >
-                      <Eye className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                    <Button variant="outline" size="sm" className="w-full group h-8 text-xs" >
+                      <Eye className="mr-2 h-3 w-3 group-hover:scale-110 transition-transform" />
                       View Details
                     </Button>
                   </Link>
-                  <Button variant="ghost" size="icon">
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                  <a
+                    href="https://github.com/hichambendaoud"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="ghost" size="icon" className="h-8 w-8 hover:text-primary hover:bg-primary/10">
+                      <Github className="h-4 w-4" />
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>

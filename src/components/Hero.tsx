@@ -3,79 +3,96 @@ import { Download, Mail, Linkedin, Github } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-20 pb-16 lg:pt-32 lg:pb-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <div className="animate-fade-in-up">
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-              <span className="text-foreground">Data Analyst &</span>{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                AI Enthusiast
-              </span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Turning complex data into meaningful insights and compelling
-              visualizations. Experienced with Python, SQL, Power BI, Tableau, and
-              Azure.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button variant="hero" size="lg" className="group">
-                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                Download Resume
-              </Button>
-              <Button variant="outline" size="lg" className="group">
-                <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Contact Me
-              </Button>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center space-x-6">
-              <a
-                href="https://linkedin.com/in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Linkedin className="h-6 w-6 group-hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="https://github.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-muted-foreground hover:text-primary transition-colors duration-300 group"
-              >
-                <Github className="h-6 w-6 group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
-          </div>
-
-          {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-fade-in">
-            <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-elegant">
-                <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground transition-transform duration-300 hover:scale-105">
-                  {/* <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                    <span className="text-white text-6xl font-bold">DA</span>
-                  </div> */}
-                  <img
-                      src="/images/profile.png"
-                      alt="Hicham Ben Daoud"
-                      className="w-full h-full object-cover"
-                    />
-                </div>
-              </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full animate-float blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full animate-float blur-xl" style={{ animationDelay: "1s" }}></div>
-            </div>
-          </div>
+    <section id="about" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 min-h-[80vh]">
+      
+      {/* TEXT SIDE (Left) */}
+      <div className="flex-1 text-center md:text-left animate-fade-in-up">
+        
+        {/* Availability Badge */}
+        <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full animate-pulse border border-primary/20">
+          Available for Freelance & Remote Work
         </div>
+        
+        {/* Main Headline */}
+        <h1 className="text-4xl md:text-6xl font-extrabold text-foreground mb-6 leading-tight">
+          Turning Raw Data into <br />
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Business Growth
+          </span>
+        </h1>
+        
+        {/* Bio */}
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+          Hi, I'm <strong className="text-foreground">Hicham Ben Daoud</strong>. I build automated data pipelines, interactive dashboards, and AI solutions that help businesses make smarter decisions. Specialized in Python, Power BI, and Azure.
+        </p>
+        
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-primary to-accent text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border-0" 
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            View My Work
+          </Button>
+          
+          <a href="/cv.pdf" download="CV_Hicham_Ben_Daoud.pdf">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="group border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+            >
+              <Download className="mr-2 h-4 w-4 group-hover:text-primary transition-colors" /> 
+              Download CV
+            </Button>
+          </a>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex items-center justify-center md:justify-start space-x-6">
+          <a
+            href="https://linkedin.com/in/hicham-ben-daoud"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform"
+          >
+            <Linkedin className="h-6 w-6" />
+          </a>
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform"
+          >
+            <Github className="h-6 w-6" />
+          </a>
+          <a
+            href="mailto:hicham.bendaoudd@gmail.com"
+            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform"
+          >
+            <Mail className="h-6 w-6" />
+          </a>
+        </div>
+      </div>
+
+      {/* IMAGE SIDE (Right) */}
+      <div className="flex-1 flex justify-center animate-fade-in">
+        {/* Increased dimensions here for a larger circle */}
+        <div className="relative w-80 h-80 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-border/50 shadow-2xl group cursor-pointer hover:border-primary/50 transition-colors duration-500">
+          {/* Overlay Effect */}
+          <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-all z-10 duration-500"></div>
+          {/* Image */}
+          <img 
+            src="/images/hicham_profile.png" 
+            alt="Hicham Ben Daoud" 
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        
+        {/* Optional Floating Decoration Elements */}
+         <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full animate-float blur-xl hidden lg:block"></div>
+         <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full animate-float blur-xl hidden lg:block" style={{ animationDelay: "1s" }}></div>
+
       </div>
     </section>
   );

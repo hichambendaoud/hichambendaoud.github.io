@@ -1,170 +1,82 @@
-
-import React, { useState } from "react";
 import { 
-  Code, 
+  Code2, 
   Database, 
-  BarChart, 
+  LayoutGrid, 
+  BarChart4, 
+  FileCode2,
   LineChart,
-  Table,
-  ChevronRight,
-  ChevronDown
+  Brain,
+  Network
 } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { cn } from "@/lib/utils";
 
-const SkillsSection = () => {
-  // State for mobile collapsible sections
-  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({
-    languages: true,
-    libraries: true,
-    tools: true,
-    pythonViz: true
-  });
-
-  // Toggle function for collapsible sections
-  const toggleCategory = (category: string) => {
-    setOpenCategories(prev => ({
-      ...prev,
-      [category]: !prev[category]
-    }));
-  };
-
-  // Icon component for skills
-  const SkillIcon = ({ skill }: { skill: string }) => {
-    switch (skill.toLowerCase()) {
-      case 'python':
-        return <Code className="h-5 w-5 text-blue-500" />;
-      case 'sql':
-        return <Database className="h-5 w-5 text-amber-500" />;
-      case 'php':
-        return <Code className="h-5 w-5 text-purple-700" />;
-      case 'javascript':
-      case 'js':
-        return <Code className="h-5 w-5 text-yellow-500" />;
-      case 'power bi':
-        return <BarChart className="h-5 w-5 text-yellow-500" />;
-      case 'tableau':
-        return <LineChart className="h-5 w-5 text-green-500" />;
-      case 'pandas':
-        return <Table className="h-5 w-5 text-purple-500" />;
-      case 'numpy':
-        return <Code className="h-5 w-5 text-blue-700" />;
-      case 'matplotlib':
-        return <LineChart className="h-5 w-5 text-red-500" />;
-      case 'seaborn':
-        return <LineChart className="h-5 w-5 text-teal-500" />;
-      default:
-        return <Code className="h-5 w-5 text-gray-500" />;
+const Skills = () => {
+  const skills = [
+    { 
+      name: "Python", 
+      icon: <Code2 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Power BI", 
+      icon: <BarChart4 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "SQL", 
+      icon: <Database className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Tableau", 
+      icon: <LineChart className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Talend", 
+      icon: <Network className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Machine Learning", 
+      icon: <Brain className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Azure", 
+      icon: <LayoutGrid className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Django", 
+      icon: <FileCode2 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
     }
-  };
-
-  // Component for a skill item with icon
-  const SkillItem = ({ skill }: { skill: string }) => (
-    <div className="flex items-center gap-1.5">
-      <SkillIcon skill={skill} />
-      <span>{skill}</span>
-    </div>
-  );
-
-  // Component for a skill category
-  const SkillCategory = ({ 
-    title, 
-    skills, 
-    categoryId 
-  }: { 
-    title: string; 
-    skills: string[];
-    categoryId: string;
-  }) => {
-    const isOpen = openCategories[categoryId];
-    
-    return (
-      <div className="mb-4">
-        {/* Desktop view - always expanded */}
-        <div className="hidden md:block">
-          <h4 className="text-sm font-medium mb-2">{title}</h4>
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
-            {skills.map((skill, index) => (
-              <SkillItem key={index} skill={skill} />
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile view - collapsible */}
-        <Collapsible
-          open={isOpen}
-          onOpenChange={() => toggleCategory(categoryId)}
-          className="md:hidden"
-        >
-          <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-            <h4 className="text-sm font-medium">{title}</h4>
-            {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-          </CollapsibleTrigger>
-          <CollapsibleContent className="pt-2">
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
-              {skills.map((skill, index) => (
-                <SkillItem key={index} skill={skill} />
-              ))}
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
-      </div>
-    );
-  };
+  ];
 
   return (
-    <section id="skills" className="py-12 bg-secondary/30 dark:bg-secondary/10">
-      <div className="container px-4 md:px-6">
-        <h2 className="section-title text-center mb-10">Technical Skills</h2>
+    <section id="skills" className="py-12 bg-background text-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Programming Column */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold mb-4">Programming</h3>
-            
-            <Card className="p-4">
-              <SkillCategory 
-                title="Languages" 
-                skills={["Python", "SQL", "PHP", "JavaScript"]} 
-                categoryId="languages"
-              />
-              
-              <Separator className="my-3" />
-              
-              <SkillCategory 
-                title="Libraries" 
-                skills={["Pandas", "NumPy"]} 
-                categoryId="libraries"
-              />
-            </Card>
-          </div>
-
-          {/* Data Visualization Column */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold mb-4">Data Visualization</h3>
-            
-            <Card className="p-4">
-              <SkillCategory 
-                title="Tools" 
-                skills={["Power BI", "Tableau"]} 
-                categoryId="tools"
-              />
-              
-              <Separator className="my-3" />
-              
-              <SkillCategory 
-                title="Python" 
-                skills={["Matplotlib", "Seaborn"]} 
-                categoryId="pythonViz"
-              />
-            </Card>
-          </div>
+        {/* Section Header */}
+        <div className="text-center mb-10 animate-fade-in-up">
+          <h2 className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-2">
+            POWERING SOLUTIONS WITH
+          </h2>
         </div>
+
+        {/* Skills Row */}
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14 lg:gap-20">
+          {skills.map((skill, index) => (
+            <div 
+              key={index} 
+              className="group flex flex-col items-center justify-center animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="text-muted-foreground group-hover:text-foreground group-hover:scale-110 transition-all duration-300">
+                {skill.icon}
+              </div>
+              <span className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+                {skill.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
 };
 
-export default SkillsSection;
+export default Skills;

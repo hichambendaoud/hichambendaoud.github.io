@@ -1,134 +1,162 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Award, GraduationCap } from "lucide-react";
+import { GraduationCap, Award, BarChart3, Bot, LayoutTemplate, Database, BookOpen, ExternalLink } from "lucide-react";
 
 const Certifications = () => {
   const education = [
     {
-      degree: "Bachelor of Science in Data Science",
-      institution: "University of Technology",
-      period: "2020 - 2023",
-      description: "Specialized in data analytics and machine learning",
-      icon: <GraduationCap className="h-6 w-6" />
+      degree: "Master In Computer Science",
+      institution: "FST Errachidia",
+      year: "2021 - 2023",
+      description: "Engineering of Complex Systems. Specialized in Data modeling, Advanced Algorithms, and Research."
     },
     {
-      degree: "Associate Degree in Computer Science",
-      institution: "Community College",
-      period: "2018 - 2020",
-      description: "Foundation in programming and algorithms",
-      icon: <GraduationCap className="h-6 w-6" />
+      degree: "Licence in Software Engineering",
+      institution: "FST Errachidia",
+      year: "2017 - 2021", 
+      description: "Core foundations of software development, database management, and system architecture."
     }
   ];
 
   const certifications = [
     {
-      id: 1,
-      title: "Microsoft Power BI Data Analyst Associate",
-      issuer: "Microsoft",
-      date: "September 2023",
-      icon: "💎",
-      color: "bg-blue-500/10 text-blue-600 border-blue-500/20"
+      title: "Get Started with Tableau",
+      issuer: "Tableau",
+      date: "Jan 2025",
+      icon: <LayoutTemplate className="w-5 h-5 text-indigo-400" />,
+      color: "bg-indigo-400/10",
+      link: "#" // Add your actual credential URL here
     },
     {
-      id: 2,
-      title: "Azure Data Fundamentals",
-      issuer: "Microsoft",
-      date: "July 2023",
-      icon: "☁️",
-      color: "bg-cyan-500/10 text-cyan-600 border-cyan-500/20"
+      title: "Generative AI Career Essentials",
+      issuer: "Microsoft & LinkedIn",
+      date: "Jan 2025",
+      icon: <Bot className="w-5 h-5 text-blue-400" />,
+      color: "bg-blue-400/10",
+      link: "#"
     },
     {
-      id: 3,
-      title: "Mastering Power BI",
+      title: "Data Analyst Career Path",
+      issuer: "Microsoft & LinkedIn",
+      date: "Jan 2025",
+      icon: <Database className="w-5 h-5 text-emerald-400" />,
+      color: "bg-emerald-400/10",
+      link: "#"
+    },
+    {
+      title: "Power BI",
+      issuer: "365 Data Science",
+      date: "Nov 2024",
+      icon: <BarChart3 className="w-5 h-5 text-amber-400" />,
+      color: "bg-amber-400/10",
+      link: "#"
+    },
+    {
+      title: "Introduction to Data Science",
+      issuer: "365 Data Science",
+      date: "Nov 2024",
+      icon: <BookOpen className="w-5 h-5 text-pink-400" />,
+      color: "bg-pink-400/10",
+      link: "#"
+    },
+    {
+      title: "Mastering MS Power BI",
       issuer: "Udemy",
-      date: "May 2023",
-      icon: "🎓",
-      color: "bg-purple-500/10 text-purple-600 border-purple-500/20"
+      date: "Sep 2024",
+      icon: <BarChart3 className="w-5 h-5 text-orange-400" />,
+      color: "bg-orange-400/10",
+      link: "#"
+    },
+    {
+      title: "Analyste de Données",
+      issuer: "UIR JobInTech",
+      date: "Aug 2024",
+      icon: <Database className="w-5 h-5 text-cyan-400" />,
+      color: "bg-cyan-400/10",
+      link: "#"
     }
   ];
 
   return (
-    <section id="certifications" className="py-16 lg:py-24">
+    <section id="certifications" className="py-20  text-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Education & Certifications
-            </span>
-          </h2>
-        </div>
-
+        
         {/* Education Section */}
-        <div className="mb-16">
-          <div className="flex items-center mb-8">
-            <GraduationCap className="mr-3 h-6 w-6 text-primary" />
-            <h3 className="text-2xl font-bold text-foreground">Education</h3>
-          </div>
-          
-          <div className="space-y-6">
-            {education.map((edu, index) => (
-              <Card 
-                key={index}
-                className="group hover:shadow-card transition-all duration-500 animate-fade-in border-l-4 border-l-primary/50 hover:border-l-primary"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="p-6">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <div>
-                      <h4 className="text-xl font-bold text-foreground mb-2">{edu.degree}</h4>
-                      <p className="text-primary font-semibold mb-2">{edu.institution}</p>
-                      <p className="text-muted-foreground italic">{edu.description}</p>
+        <div className="mb-20">
+            <div className="flex items-center justify-center gap-3 mb-12">
+               <GraduationCap className="w-8 h-8 text-blue-500" />
+               <h2 className="text-3xl font-bold text-white text-center">Education</h2>
+            </div>
+
+            <div className="max-w-3xl mx-auto relative border-l-2 border-slate-800 ml-4 md:ml-8 space-y-12">
+              {education.map((item, index) => (
+                <div key={index} className="relative pl-8 md:pl-12">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#0B1120] border-2 border-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                  
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-xl font-bold text-white">{item.degree}</h3>
+                    <div className="flex flex-wrap items-center gap-2 text-sm mb-2">
+                      <span className="text-blue-400 font-medium">{item.institution}</span>
+                      <span className="text-slate-600">|</span>
+                      <span className="text-slate-400">{item.year}</span>
                     </div>
-                    <div className="mt-4 lg:mt-0">
-                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                        {edu.period}
-                      </Badge>
-                    </div>
+                    <p className="text-slate-400 text-sm leading-relaxed max-w-lg">
+                      {item.description}
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              ))}
+            </div>
         </div>
 
-        {/* Certifications Section */}
+        {/* Certifications Marquee Section */}
         <div>
-          <div className="flex items-center mb-8">
-            <Award className="mr-3 h-6 w-6 text-primary" />
-            <h3 className="text-2xl font-bold text-foreground">Certifications</h3>
-          </div>
+            <div className="flex items-center justify-center gap-3 mb-10">
+               <div className="relative">
+                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                 <Award className="w-8 h-8 text-blue-500" /> 
+               </div>
+               <h2 className="text-3xl font-bold text-white text-center">Certifications</h2>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <Card 
-                key={cert.id}
-                className="group text-center hover:shadow-card transition-all duration-500 animate-fade-in hover:scale-105"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardHeader className="pb-4">
-                  <div className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl mb-4 ${cert.color}`}>
-                    {cert.icon}
-                  </div>
-                  <CardTitle className="text-lg font-bold group-hover:text-primary transition-colors duration-300">
-                    {cert.title}
-                  </CardTitle>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <p className="text-primary font-semibold">{cert.issuer}</p>
-                  <Badge variant="outline" className="bg-secondary">
-                    {cert.date}
-                  </Badge>
-                  <Button variant="outline" size="sm" className="w-full group">
-                    <ExternalLink className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-                    Verify
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+            <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+                <div className="flex w-full overflow-hidden mask-gradient-x">
+                    <div className="flex w-max animate-scroll gap-4 py-4 hover:[animation-play-state:paused]">
+                        {/* Duplicate the array to create seamless loop effect */}
+                        {[...certifications, ...certifications].map((cert, index) => (
+                            <a 
+                                key={index}
+                                href={cert.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex min-w-[300px] items-center gap-3 p-4 rounded-xl bg-[#111827] border border-slate-800 hover:border-blue-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group cursor-pointer select-none relative"
+                            >
+                                <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${cert.color} group-hover:scale-110 transition-transform duration-300`}>
+                                    {cert.icon}
+                                </div>
+                                
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-center justify-between gap-2">
+                                        <h4 className="font-bold text-white text-sm truncate group-hover:text-blue-400 transition-colors" title={cert.title}>
+                                            {cert.title}
+                                        </h4>
+                                        <ExternalLink className="w-3 h-3 text-slate-600 group-hover:text-blue-400 transition-colors shrink-0" />
+                                    </div>
+                                    <div className="flex items-center gap-1.5 text-xs text-slate-400 mt-0.5">
+                                        <span className="truncate max-w-[120px]">{cert.issuer}</span>
+                                        <span className="text-slate-600">|</span>
+                                        <span className="whitespace-nowrap">{cert.date}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+                {/* Gradient Masks for smooth fade out at edges */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-[#0B1120] to-transparent"></div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-[#0B1120] to-transparent"></div>
+            </div>
         </div>
+
       </div>
     </section>
   );

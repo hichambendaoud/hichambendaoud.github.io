@@ -1,116 +1,104 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Building } from "lucide-react";
+import { MapPin, Briefcase, Bot } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: "ETL Pipeline Design Internship",
-      company: "Tech Solutions Inc.",
-      location: "Remote",
-      period: "Jun 2023 - Sep 2023",
-      description: "Designed and implemented ETL pipelines for customer data integration.",
+      role: "Data Analyst Trainee",
+      company: "JobInTech",
+      location: "Rabat, Morocco",
+      period: "Apr 2024 - Aug 2024",
+      icon: <Briefcase className="w-5 h-5" />,
+      active: true,
       achievements: [
-        "Reduced data processing time by 40% through optimized SQL queries and pipeline architecture",
-        "Implemented data quality checks that improved data accuracy by 25%",
-        "Developed documentation and training materials for the ETL process"
-      ],
-      skills: ["Talend", "SQL", "Python", "Azure Data Factory"]
+        "Designed and automated ETL pipelines (Talend, Python, SSIS) to streamline data processing, reducing preparation time by 30%",
+        "Developed optimized SQL queries and created Power BI dashboards (DAX) to track strategic KPIs",
+        "Implemented a data quality control system, improving analysis reliability by 25%",
+        "Collaborated in Agile Scrum mode with stakeholders to align analyses with business needs"
+      ]
     },
     {
       id: 2,
-      title: "Power BI Dashboard Developer",
-      company: "Data Insights Corp.",
+      role: "Machine Learning Engineer Intern (PFE)",
+      company: "ZJS CONSULTING",
       location: "Remote",
-      period: "Jan 2023 - May 2023",
-      description: "Created interactive Power BI dashboards for sales and marketing teams.",
+      period: "Feb 2023 - Sep 2023",
+      icon: <Bot className="w-5 h-5" />,
+      active: false,
       achievements: [
-        "Built 15+ interactive dashboards that reduced reporting time by 70%",
-        "Implemented DAX measures that accurately calculated KPIs across multiple dimensions",
-        "Trained 20+ team members on dashboard usage and data interpretation"
-      ],
-      skills: ["Power BI", "DAX", "SQL", "Excel"]
+        "Developed a text generation and audio classification model using Python, TensorFlow, and Keras",
+        "Created a web application (Django) integrating an ML API for speech recognition, achieving a 15% increase in transcription accuracy",
+        "Authored comprehensive technical documentation to ensure result reproducibility"
+      ]
     }
   ];
 
   return (
-    <section id="experience" className="py-16 lg:py-24 bg-gradient-to-r from-background to-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20  text-slate-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Experience Highlights
-            </span>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">
+            Professional Experience
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional experiences in data analysis, ETL development, and machine learning
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            My professional journey in data analysis, engineering, and machine learning
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="relative space-y-8">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-[18px] md:left-[19px] top-4 bottom-4 w-0.5 bg-slate-800"></div>
+
           {experiences.map((experience, index) => (
-            <Card 
+            <div 
               key={experience.id} 
-              className="group hover:shadow-card transition-all duration-500 animate-fade-in border-l-4 border-l-primary/50 hover:border-l-primary"
+              className="relative pl-14 md:pl-16 group animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <CardHeader>
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              {/* Timeline Icon */}
+              <div className={`absolute left-0 top-0 flex items-center justify-center w-10 h-10 rounded-full border-2 bg-[#0B1120] z-10 transition-all duration-300 ${
+                experience.active 
+                  ? 'border-blue-500 text-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.5)]' 
+                  : 'border-slate-700 text-slate-500'
+              }`}>
+                {experience.icon}
+              </div>
+
+              {/* Card */}
+              <div className="rounded-xl border border-slate-800 bg-[#111827] p-6 hover:border-slate-700 transition-all duration-300 shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                   <div>
-                    <CardTitle className="text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
-                      {experience.title}
-                    </CardTitle>
-                    <div className="flex items-center text-foreground font-semibold mt-2">
-                      <Building className="mr-2 h-4 w-4 text-primary" />
-                      {experience.company}
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      {experience.role}
+                    </h3>
+                    <div className="flex items-center gap-2 text-slate-400 text-sm">
+                      <span className="font-medium text-slate-300">{experience.company}</span>
+                      <span className="text-slate-600">|</span>
+                      <span>{experience.location}</span>
                     </div>
                   </div>
-                  <div className="flex flex-col lg:items-end gap-2">
-                    <div className="flex items-center text-muted-foreground">
-                      <Calendar className="mr-2 h-4 w-4" />
-                      {experience.period}
-                    </div>
-                    <div className="flex items-center text-muted-foreground">
-                      <MapPin className="mr-2 h-4 w-4" />
-                      {experience.location}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-muted-foreground mt-4 text-lg">
-                  {experience.description}
-                </p>
-              </CardHeader>
-
-              <CardContent className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Key Achievements:</h4>
-                  <ul className="space-y-2">
-                    {experience.achievements.map((achievement, achievementIndex) => (
-                      <li key={achievementIndex} className="flex items-start">
-                        <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span className="text-muted-foreground">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  
+                  <Badge className={`w-fit text-xs px-3 py-1 font-medium border-none ${
+                    experience.active 
+                      ? 'bg-blue-500/10 text-blue-400 hover:bg-blue-500/20' 
+                      : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  }`}>
+                    {experience.period}
+                  </Badge>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Skills Applied:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.skills.map((skill) => (
-                      <Badge 
-                        key={skill} 
-                        variant="outline" 
-                        className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors duration-300"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                <ul className="space-y-3">
+                  {experience.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-start text-slate-400 text-sm leading-relaxed">
+                      <span className="mr-3 mt-2 w-1.5 h-1.5 bg-slate-500 rounded-full shrink-0 opacity-70" />
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           ))}
         </div>
       </div>
