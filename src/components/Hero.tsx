@@ -10,7 +10,7 @@ const Hero = () => {
         
         {/* Availability Badge */}
         <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full animate-pulse border border-primary/20">
-          Available for Freelance & Remote Work
+          Available for new opportunities
         </div>
         
         {/* Main Headline */}
