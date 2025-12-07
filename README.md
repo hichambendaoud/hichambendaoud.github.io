@@ -1,6 +1,6 @@
-# Welcome to your Lovable project
+# Welcome to hicham project
 
-## Project info
+<!-- ## Project info
 
 **URL**: https://lovable.dev/projects/ba4374d8-9b07-4080-9c8a-01bfe74fcc89
 
@@ -70,4 +70,4 @@ Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide) -->
