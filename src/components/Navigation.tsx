@@ -42,7 +42,7 @@ const Navigation = () => {
     { name: "Projects", href: "/#projects" },
     { name: "Experience", href: "/#experience" },
     { name: "Certifications", href: "/#certifications" },
-    { name: "Blog", href: "/#blog" },
+    // { name: "Blog", href: "/#blog" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -94,9 +94,9 @@ const Navigation = () => {
               e.preventDefault();
               handleLogoClick();
             }}
-            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 truncate"
+            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 text-white bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 truncate"
           >
-            Hicham Ben Daoud
+          <span className="text-primary">BEN DAOUD</span> Hicham
           </Link>
 
           {/* Desktop Navigation */}
