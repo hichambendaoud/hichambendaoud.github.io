@@ -94,9 +94,9 @@ const Navigation = () => {
               e.preventDefault();
               handleLogoClick();
             }}
-            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 truncate"
+            className="text-xl md:text-2xl font-bold bg-gradient-to-r text-white from-blue-400 to-indigo-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 truncate"
           >
-            Hicham Ben Daoud
+            Hicham <span className="text-primary">BEN DAOUD</span> 
           </Link>
 
           {/* Desktop Navigation */}

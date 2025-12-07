@@ -251,7 +251,7 @@ const ProjectDetail = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <button 
-                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 z-10"
+                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 z-10"
                     aria-label="View Fullscreen"
                   >
                     <Maximize2 className="h-5 w-5" />
@@ -270,7 +270,7 @@ const ProjectDetail = () => {
                             className="max-w-full max-h-full object-contain"
                         />
                         
-                        {/* Fullscreen Navigation - Moved to bottom for mobile or hidden if single image */}
+                        {/* Fullscreen Navigation */}
                         {images.length > 1 && (
                             <>
                                 {currentImageIndex > 0 && (
@@ -279,7 +279,7 @@ const ProjectDetail = () => {
                                             e.stopPropagation();
                                             handlePrevImage();
                                         }}
-                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 opacity-0 md:opacity-0 md:group-hover/fullscreen:opacity-100 hidden md:block"
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 opacity-0 group-hover/fullscreen:opacity-100 hidden md:block"
                                         aria-label="Previous image"
                                     >
                                         <ChevronLeft className="h-8 w-8" />
@@ -292,36 +292,12 @@ const ProjectDetail = () => {
                                             e.stopPropagation();
                                             handleNextImage();
                                         }}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 opacity-0 md:opacity-0 md:group-hover/fullscreen:opacity-100 hidden md:block"
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 opacity-0 group-hover/fullscreen:opacity-100 hidden md:block"
                                         aria-label="Next image"
                                     >
                                         <ChevronRight className="h-8 w-8" />
                                     </button>
                                 )}
-                                
-                                {/* Mobile Navigation Controls (Bottom) */}
-                                <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-8 md:hidden z-50">
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            handlePrevImage();
-                                        }}
-                                        disabled={currentImageIndex === 0}
-                                        className={`p-3 rounded-full bg-black/50 text-white backdrop-blur-sm border border-white/10 ${currentImageIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'active:bg-black/70'}`}
-                                    >
-                                        <ChevronLeft className="h-6 w-6" />
-                                    </button>
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            handleNextImage();
-                                        }}
-                                        disabled={currentImageIndex === images.length - 1}
-                                        className={`p-3 rounded-full bg-black/50 text-white backdrop-blur-sm border border-white/10 ${currentImageIndex === images.length - 1 ? 'opacity-30 cursor-not-allowed' : 'active:bg-black/70'}`}
-                                    >
-                                        <ChevronRight className="h-6 w-6" />
-                                    </button>
-                                </div>
                             </>
                         )}
                     </div>
@@ -334,7 +310,7 @@ const ProjectDetail = () => {
                   {currentImageIndex > 0 && (
                     <button
                       onClick={handlePrevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 hidden md:block"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 hidden md:block"
                       style={{ zIndex: 2 }}
                       aria-label="Previous image"
                     >
@@ -345,7 +321,7 @@ const ProjectDetail = () => {
                   {currentImageIndex < images.length - 1 && (
                     <button
                       onClick={handleNextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 hidden md:block"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 hidden md:block"
                       style={{ zIndex: 2 }}
                       aria-label="Next image"
                     >
@@ -360,7 +336,7 @@ const ProjectDetail = () => {
               
               {/* Dots Indicator - Hidden unless hovering on desktop, visible on mobile if needed but keeping hover logic for cleaner look as requested previously */}
               {images.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   {images.map((_, idx) => (
                     <div 
                       key={idx}
