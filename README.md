@@ -1,4 +1,4 @@
-# Welcome to hicham project
+# Welcome to hicham portafolio!
 
 <!-- ## Project info
 
