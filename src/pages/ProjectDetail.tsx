@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, TouchEvent } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +10,11 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const ProjectDetail = () => {
   const { slug } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Swipe state
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
 
   // Project Data matching your portfolio
   const projects: Record<string, any> = {
@@ -187,11 +192,35 @@ const ProjectDetail = () => {
     }
   };
 
+  // Swipe Handlers
+  const onTouchStart = (e: TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentImageIndex < images.length - 1) {
+      handleNextImage();
+    }
+    if (isRightSwipe && currentImageIndex > 0) {
+      handlePrevImage();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0B1120] text-slate-200">
       <Navigation />
       <div className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <div className="mb-8 animate-fade-in">
             <Link to="/projects">
@@ -205,7 +234,12 @@ const ProjectDetail = () => {
           {/* Project Images Carousel */}
           {images.length > 0 && (
             <div className="relative mb-12 animate-fade-in group">
-              <div className="overflow-hidden rounded-xl border border-slate-800 shadow-2xl bg-[#111827]">
+              <div 
+                className="overflow-hidden rounded-xl border border-slate-800 shadow-2xl bg-[#111827]"
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+              >
                 <img
                   src={images[currentImageIndex]}
                   alt={`${project.title} screenshot ${currentImageIndex + 1}`}
@@ -217,21 +251,26 @@ const ProjectDetail = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <button 
-                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                    className="absolute top-4 right-4 p-2 rounded-full bg-black/50 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 z-10"
                     aria-label="View Fullscreen"
                   >
                     <Maximize2 className="h-5 w-5" />
                   </button>
                 </DialogTrigger>
                 <DialogContent className="max-w-[95vw] h-[90vh] bg-[#0B1120]/95 border-slate-800 p-0 flex items-center justify-center focus:outline-none">
-                    <div className="relative w-full h-full flex items-center justify-center group/fullscreen">
+                    <div 
+                        className="relative w-full h-full flex items-center justify-center group/fullscreen"
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                    >
                         <img
                             src={images[currentImageIndex]}
                             alt={`${project.title} full screenshot`}
                             className="max-w-full max-h-full object-contain"
                         />
                         
-                        {/* Fullscreen Navigation */}
+                        {/* Fullscreen Navigation - Moved to bottom for mobile or hidden if single image */}
                         {images.length > 1 && (
                             <>
                                 {currentImageIndex > 0 && (
@@ -240,7 +279,7 @@ const ProjectDetail = () => {
                                             e.stopPropagation();
                                             handlePrevImage();
                                         }}
-                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 opacity-0 md:opacity-0 md:group-hover/fullscreen:opacity-100 hidden md:block"
                                         aria-label="Previous image"
                                     >
                                         <ChevronLeft className="h-8 w-8" />
@@ -253,25 +292,49 @@ const ProjectDetail = () => {
                                             e.stopPropagation();
                                             handleNextImage();
                                         }}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 opacity-0 md:opacity-0 md:group-hover/fullscreen:opacity-100 hidden md:block"
                                         aria-label="Next image"
                                     >
                                         <ChevronRight className="h-8 w-8" />
                                     </button>
                                 )}
+                                
+                                {/* Mobile Navigation Controls (Bottom) */}
+                                <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-8 md:hidden z-50">
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handlePrevImage();
+                                        }}
+                                        disabled={currentImageIndex === 0}
+                                        className={`p-3 rounded-full bg-black/50 text-white backdrop-blur-sm border border-white/10 ${currentImageIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'active:bg-black/70'}`}
+                                    >
+                                        <ChevronLeft className="h-6 w-6" />
+                                    </button>
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleNextImage();
+                                        }}
+                                        disabled={currentImageIndex === images.length - 1}
+                                        className={`p-3 rounded-full bg-black/50 text-white backdrop-blur-sm border border-white/10 ${currentImageIndex === images.length - 1 ? 'opacity-30 cursor-not-allowed' : 'active:bg-black/70'}`}
+                                    >
+                                        <ChevronRight className="h-6 w-6" />
+                                    </button>
+                                </div>
                             </>
                         )}
                     </div>
                 </DialogContent>
               </Dialog>
 
-              {/* Navigation Arrows - Only show if multiple images and not at edges */}
+              {/* Navigation Arrows - Only show if multiple images and not at edges. Always visible on mobile, hover on desktop */}
               {images.length > 1 && (
                 <>
                   {currentImageIndex > 0 && (
                     <button
                       onClick={handlePrevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 hidden md:block"
                       style={{ zIndex: 2 }}
                       aria-label="Previous image"
                     >
@@ -282,19 +345,22 @@ const ProjectDetail = () => {
                   {currentImageIndex < images.length - 1 && (
                     <button
                       onClick={handleNextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-0 group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 hover:bg-black/70 transition-all duration-300 backdrop-blur-sm border border-white/10 hidden md:block"
                       style={{ zIndex: 2 }}
                       aria-label="Next image"
                     >
                       <ChevronRight className="h-6 w-6" />
                     </button>
                   )}
+                  
+                  {/* Mobile Navigation Controls (Bottom for main carousel too if desired, or rely on swipe) */}
+                  {/* Since swipe is added, we can hide arrows on mobile to clear the view */}
                 </>
               )}
               
-              {/* Dots Indicator - Hidden unless hovering */}
+              {/* Dots Indicator - Hidden unless hovering on desktop, visible on mobile if needed but keeping hover logic for cleaner look as requested previously */}
               {images.length > 1 && (
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   {images.map((_, idx) => (
                     <div 
                       key={idx}
@@ -332,7 +398,7 @@ const ProjectDetail = () => {
                      <span className="w-1 h-8 bg-red-500 rounded-full"></span>
                      The Problem
                    </h3>
-                   <Card className="bg-[#111827] border-slate-800 shadow-sm">
+                   <Card className="bg-[#111827] border-slate-800 shadow-sm h-full border-l-4 border-l-red-500/50">
                       <CardContent className="p-6">
                         <p className="text-slate-300 leading-relaxed text-lg">{project.problem}</p>
                       </CardContent>
@@ -345,7 +411,7 @@ const ProjectDetail = () => {
                      <span className="w-1 h-8 bg-blue-500 rounded-full"></span>
                      The Solution
                    </h3>
-                   <Card className="bg-[#111827] border-slate-800 shadow-sm">
+                   <Card className="bg-[#111827] border-slate-800 shadow-sm h-full border-l-4 border-l-blue-500/50">
                       <CardContent className="p-6">
                         <p className="text-slate-300 leading-relaxed text-lg">{project.solution}</p>
                       </CardContent>
@@ -358,7 +424,7 @@ const ProjectDetail = () => {
                      <span className="w-1 h-8 bg-emerald-500 rounded-full"></span>
                      Results & Impact
                    </h3>
-                   <Card className="bg-[#111827] border-slate-800 shadow-sm">
+                   <Card className="bg-[#111827] border-slate-800 shadow-sm h-full border-l-4 border-l-emerald-500/50">
                       <CardContent className="p-6">
                         <ul className="space-y-4">
                           {project.results.map((result: string, index: number) => (
