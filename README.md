@@ -1,30 +1,30 @@
-# Welcome to your Lovable project
+# Welcome to hicham portfolio
 
-## Project info
+<!-- ## Project info
 
 <!-- **URL**: https://lovable.dev/projects/ba4374d8-9b07-4080-9c8a-01bfe74fcc89 -->
 
-## How can I edit this code?
+<!-- ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use Lovable** --> 
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ba4374d8-9b07-4080-9c8a-01bfe74fcc89) and start prompting.
+<!-- Simply visit the [Lovable Project](https://lovable.dev/projects/ba4374d8-9b07-4080-9c8a-01bfe74fcc89) and start prompting. -->
 
-Changes made via Lovable will be committed automatically to this repo.
+<!-- Changes made via Lovable will be committed automatically to this repo. -->
 
-**Use your preferred IDE**
+<!-- **Use your preferred IDE** -->
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+<!-- If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+<!-- ```sh 
+# Step 1: Clone the repository using the project's Git URL. -->
+<!-- git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
@@ -34,9 +34,9 @@ npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-```
+``` -->
 
-**Edit a file directly in GitHub**
+<!-- **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
 - Click the "Edit" button (pencil icon) at the top right of the file view.
@@ -70,4 +70,4 @@ Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide) -->
