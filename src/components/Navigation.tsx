@@ -58,7 +58,7 @@ const Navigation = () => {
     { name: "Projects", href: "/#projects" },
     { name: "Experience", href: "/#experience" },
     { name: "Certifications", href: "/#certifications" },
-    { name: "Blog", href: "/#blog" },
+    // { name: "Blog", href: "/#blog" },
   ];
 
   const handleNavClick = (href: string) => {
