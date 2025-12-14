@@ -16,7 +16,7 @@ const ProjectsList = () => {
       title: "HR Analytics Dashboard (Tableau Project)",
       description: "Interactive Power BI report showing sales trends, regional performance, and KPI tracking.",
       category: "Business Intelligence",
-      image: "/lovable-uploads/HR_Dashboard/RHdash.png",
+      image: "/uploads/HR_Dashboard/RHdash.png",
       technologies: ["Tableau", "Python"],
       featured: true
     },
@@ -25,7 +25,7 @@ const ProjectsList = () => {
       title: "Marketing Analytics for an E-commerce Website",
       description: "Tableau dashboard performing RFM segmentation and cohort analysis for marketing campaigns.",
       category: "Data Visualization",
-      image: "/lovable-uploads/Marketing_Analytics/Overview.PNG",
+      image: "/uploads/Marketing_Analytics/Overview.PNG",
       technologies: ["Tableau", "Python", "Pandas", "SQL"],
       featured: true
     },
@@ -34,7 +34,7 @@ const ProjectsList = () => {
       title: "ETL Pipeline with Talend",
       description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
       category: "Data Engineering",
-      image: "/lovable-uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
+      image: "/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
       technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
       featured: false
     },
@@ -43,7 +43,7 @@ const ProjectsList = () => {
       title: "Hospital Patient Data Analysis",
       description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
       category: "Data Science",
-      image: "/lovable-uploads/Hospital_Patien/Dashboard_Overview.PNG",
+      image: "/uploads/Hospital_Patien/Dashboard_Overview.PNG",
       technologies: ["D3.js", "Python", "Flask", "PostgreSQL"],
       featured: false
     },
@@ -52,7 +52,7 @@ const ProjectsList = () => {
       title: "Gitex Web Scraping & Data Visualization",
       description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
       category: "Data Science",
-      image: "/lovable-uploads/Gitex_Web_Scraping/dashboard_preview.png",
+      image: "/uploads/Gitex_Web_Scraping/dashboard_preview.png",
       technologies: ["Power BI", "Python", "excel"],
       featured: false
     },
@@ -61,7 +61,7 @@ const ProjectsList = () => {
       title: "Machine Learning Pipeline",
       description: "End-to-end ML pipeline for predictive analytics using Python and scikit-learn.",
       category: "Machine Learning",
-      image: "/lovable-uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png",
+      image: "/uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png",
       technologies: ["Python", "scikit-learn", "Pandas", "Flask"],
       featured: false
     },
@@ -70,7 +70,7 @@ const ProjectsList = () => {
       title: "Real-time Analytics Dashboard",
       description: "Real-time data analytics dashboard using Apache Kafka and Elasticsearch.",
       category: "Real-time Analytics",
-      image: "/lovable-uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png",
+      image: "/uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png",
       technologies: ["Kafka", "Elasticsearch", "React", "Python"],
       featured: false
     }

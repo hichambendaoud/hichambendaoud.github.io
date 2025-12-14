@@ -11,7 +11,7 @@ const Projects = () => {
       title: "HR Analytics Dashboard (Tableau Project)",
       description: "An interactive Tableau dashboard built to consolidate HR data and reveal key workforce metrics and trends.",
       category: "Business Intelligence",
-      image: "/lovable-uploads/HR_Dashboard/RHdash.png",
+      image: "/uploads/HR_Dashboard/RHdash.png",
       technologies: ["Tableau", "Python"],
       featured: true
     },
@@ -20,7 +20,7 @@ const Projects = () => {
       title: "Marketing Analytics for an E-commerce Website",
       description: "Tableau dashboard performing RFM segmentation and cohort analysis for marketing campaigns.",
       category: "Data Visualization",
-      image: "/lovable-uploads/Marketing_Analytics/Overview.PNG",
+      image: "/uploads/Marketing_Analytics/Overview.PNG",
       technologies: ["Tableau", "Python", "Pandas", "SQL"],
       featured: true
     },
@@ -29,7 +29,7 @@ const Projects = () => {
       title: "ETL Pipeline with Talend",
       description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
       category: "Data Engineering",
-      image: "/lovable-uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
+      image: "/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
       technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
       featured: false
     }
