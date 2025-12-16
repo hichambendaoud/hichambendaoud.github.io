@@ -36,14 +36,14 @@ const Hero = () => {
             View My Work
           </Button>
           
-          <a href="/public/pdf/CV_Hicham_Ben_Daoud.pdf" download="CV_Hicham_Ben_Daoud.pdf">
-            <Button 
-              variant="outline" 
-              size="lg" 
+          <a href="/public/pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="lg"
               className="group border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
             >
-              <Download className="mr-2 h-4 w-4 group-hover:text-primary transition-colors" /> 
-              Download CV
+              <Download className="mr-2 h-4 w-4 group-hover:text-primary transition-colors" />
+              View Resume
             </Button>
           </a>
         </div>
