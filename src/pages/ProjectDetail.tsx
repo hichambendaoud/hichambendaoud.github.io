@@ -187,6 +187,31 @@ const ProjectDetail = () => {
         code: "#" 
       }
     },
+    "sql-data-warehouse-project": {
+      title: "SQL Data Warehouse from Scratch",
+      category: "Data wharehousing",
+      description: "Modern data warehouse implementation using SQL Server and ETL processes with Bronze, Silver, and Gold architecture.",
+      fullDescription: "A comprehensive data engineering project that builds a modern data warehouse from the ground up using SQL Server. Inspired by industry best practices (Medallion Architecture), this project transforms raw data from disparate ERP and CRM sources into a high-performance analytical system. It moves data through Bronze (Raw), Silver (Cleaned/Transformed), and Gold (Business Ready) layers to ensure data quality and reliability.",
+      image: "/uploads/sql-data-warehouse-project/sql_data_warehouse.png",
+      technologies: ["SQL Server", "T-SQL", "ETL", "Data Modeling", "Data Warehousing"],
+      problem: "Businesses often struggle with fragmented data scattered across multiple legacy systems (ERP & CRM), leading to inconsistent reporting, slow query performance, and a lack of trust in data quality. There was a critical need for a 'Single Source of Truth' to enable accurate, self-service analytics.",
+      solution: [
+        "Bronze Layer (Raw): Created stored procedures to bulk load raw CSV data from ERP and CRM systems into SQL Server tables.",
+        "Silver Layer (Transformation): Developed T-SQL scripts to clean data, normalize fields, handle null values, and standardize date formats, ensuring high data quality.",
+        "Gold Layer (Serving): Designed a Star Schema (Fact and Dimension tables) optimized for reporting tools like Power BI.",
+        "Automation: Implemented a master ETL stored procedure to orchestrate the entire pipeline flow from raw ingestion to the final reporting layer."
+      ],
+      results: [
+        "Established a scalable Data Warehouse architecture capable of integrating new data sources with minimal friction.",
+        "Improved query performance for reporting by denormalizing data into a Star Schema structure.",
+        "Ensured data consistency by implementing validation checks and standardization rules in the Silver layer.",
+        "Reduced manual data preparation time significantly by automating the ETL pipeline."
+      ],
+      links: {
+        demo: "#", 
+        code: "https://github.com/hichambendaoud/sql-data-warehouse-project"
+      }
+    },
     // "machine-learning-pipeline": {
     //   title: "Machine Learning Pipeline",
     //   category: "Machine Learning",

@@ -67,6 +67,16 @@ const ProjectsList = () => {
       technologies: ["TensorFlow", "Django", "Python"],
       featured: false
     },
+    {
+      id: "sql-data-warehouse-project",
+      title: "SQL Data Warehouse from Scratch",
+      description: "A comprehensive data engineering project building a modern data warehouse using SQL Server, performing ETL with Medallion Architecture (Bronze, Silver, Gold).",
+      category: "Data wharehousing",
+      image: "/uploads/sql-data-warehouse-project/sql_data_warehouse.png", 
+      technologies: ["SQL Server", "ETL", "Data Modeling", "TSQL"],
+      code: "https://github.com/hichambendaoud/sql-data-warehouse-project",
+      featured: false
+    },
     // {
     //   id: "etl-pipeline-talend",
     //   title: "ETL Pipeline with Talend",
