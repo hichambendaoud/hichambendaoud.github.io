@@ -1,0 +1,28 @@
+name: Security Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 8 * * 1' # Runs every Monday at 8am
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run NPM Audit
+        # This will fail the build if vulnerabilities of level 'high' or 'critical' are found
+        run: npm audit --audit-level=high
