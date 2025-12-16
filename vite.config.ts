@@ -5,7 +5,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
+    // Removed 'host: "::"' to restrict access to localhost only (safer for public WiFi)
     port: 8080,
   },
   plugins: [
