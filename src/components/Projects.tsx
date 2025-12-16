@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const Projects = () => {
   const projects = [
     {
-      id: "sales-performance-dashboard",
-      title: "HR Analytics Dashboard (Tableau Project)",
+      id: "hr-analytics-dashboard",
+      title: "HR Analytics Dashboard",
       description: "An interactive Tableau dashboard built to consolidate HR data and reveal key workforce metrics and trends.",
       category: "Business Intelligence",
       image: "/uploads/HR_Dashboard/RHdash.png",
@@ -25,14 +25,14 @@ const Projects = () => {
       featured: true
     },
     {
-      id: "etl-pipeline-talend",
-      title: "ETL Pipeline with Talend",
-      description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
-      category: "Data Engineering",
-      image: "/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
-      technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
-      featured: false
-    }
+      id: "gitex-scraping-analysis", // UPDATED ID to match above
+      title: "Gitex Exhibitor Analysis",
+      description: "Web scraping and Power BI dashboard to analyze Gitex exhibitors and trends.",
+      category: "Data Science",
+      image: "/uploads/Gitex_Web_Scraping/dashboard_preview.png",
+      technologies: ["Python", "Power BI", "Web Scraping"],
+      featured: true
+    },
   ];
 
   return (

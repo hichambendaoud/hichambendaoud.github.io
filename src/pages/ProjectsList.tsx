@@ -11,69 +11,89 @@ const ProjectsList = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const allProjects = [
-    {
-      id: "sales-performance-dashboard",
-      title: "HR Analytics Dashboard (Tableau Project)",
-      description: "Interactive Power BI report showing sales trends, regional performance, and KPI tracking.",
+  {
+      id: "hr-analytics-dashboard",
+      title: "HR Analytics Dashboard",
+      description: "An interactive Tableau dashboard built to consolidate HR data and reveal key workforce metrics and trends.",
       category: "Business Intelligence",
       image: "/uploads/HR_Dashboard/RHdash.png",
       technologies: ["Tableau", "Python"],
-      featured: true
+      code: "https://github.com/hichambendaoud/tableau-hr-dashboard",
+      featured: false
     },
-    {
+   {
       id: "customer-segmentation-tableau",
-      title: "Marketing Analytics for an E-commerce Website",
-      description: "Tableau dashboard performing RFM segmentation and cohort analysis for marketing campaigns.",
-      category: "Data Visualization",
+      title: "ShopEasy Marketing Analytics",
+      description: "A Power BI dashboard using SQL and Python to analyze marketing ROI and customer sentiment.", // Shortened to fit
+      category: "Business Intelligence",
       image: "/uploads/Marketing_Analytics/Overview.PNG",
-      technologies: ["Tableau", "Python", "Pandas", "SQL"],
-      featured: true
-    },
-    {
-      id: "etl-pipeline-talend",
-      title: "ETL Pipeline with Talend",
-      description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
-      category: "Data Engineering",
-      image: "/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
-      technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
+      technologies: ["Power BI", "Python", "SQL"],
+      code: "https://github.com/hichambendaoud/Marketing-Analytics-Business",
       featured: false
     },
-    {
-      id: "data-visualization-platform",
-      title: "Hospital Patient Data Analysis",
-      description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
-      category: "Data Science",
+      {
+      id: "patient-records-analytics",
+      title: "Patient Records Analytics",
+      description: "Hospital patient record analysis using Power BI, Streamlit, and Python.",
+      category: "Data visaulization",
       image: "/uploads/Hospital_Patien/Dashboard_Overview.PNG",
-      technologies: ["D3.js", "Python", "Flask", "PostgreSQL"],
-      featured: false
+      technologies: ["Power BI", "Python", "Streamlit"],
+      featured: false 
     },
-     {
-      id: "data-visualization-platform1",
-      title: "Gitex Web Scraping & Data Visualization",
-      description: "Custom data visualization platform using D3.js and Python for complex dataset analysis.",
+    {
+      id: "gitex-scraping-analysis", // UPDATED ID to match above
+      title: "Gitex Exhibitor Analysis",
+      description: "Web scraping and Power BI dashboard to analyze Gitex exhibitors and trends.",
       category: "Data Science",
       image: "/uploads/Gitex_Web_Scraping/dashboard_preview.png",
-      technologies: ["Power BI", "Python", "excel"],
-      featured: false
+      technologies: ["Python", "Power BI", "Web Scraping"],
+      featured: false 
     },
     {
-      id: "machine-learning-pipeline",
-      title: "Machine Learning Pipeline",
-      description: "End-to-end ML pipeline for predictive analytics using Python and scikit-learn.",
+      id: "etl-data-pipeline",
+      title: "Automated ETL Data Pipeline",
+      description: "Talend & Python pipelines reducing processing time by 30%.",
+      category: "Data Engineering",
+      image: "/uploads/Digital_Factory_ETL/Digital_Factory_architecturee.png", 
+      technologies: ["Talend", "SQL", "Python"],
+      featured: false 
+    },
+    {
+      id: "audio-classification-ml",
+      title: "Speech-to-Text & Audio Classification System",
+      description: "deep learning system for speech recognition and audio classification deployed with Django.", 
       category: "Machine Learning",
-      image: "/uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png",
-      technologies: ["Python", "scikit-learn", "Pandas", "Flask"],
+      image: "/uploads/Speech_to_Text/accueil.PNG", 
+      technologies: ["TensorFlow", "Django", "Python"],
       featured: false
     },
-    {
-      id: "real-time-analytics",
-      title: "Real-time Analytics Dashboard",
-      description: "Real-time data analytics dashboard using Apache Kafka and Elasticsearch.",
-      category: "Real-time Analytics",
-      image: "/uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png",
-      technologies: ["Kafka", "Elasticsearch", "React", "Python"],
-      featured: false
-    }
+    // {
+    //   id: "etl-pipeline-talend",
+    //   title: "ETL Pipeline with Talend",
+    //   description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
+    //   category: "Data Engineering",
+    //   image: "/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
+    //   technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
+    //   featured: false
+    // },
+    // {
+    //   id: "machine-learning-pipeline",
+    //   title: "Machine Learning Pipeline",
+    //   description: "End-to-end ML pipeline for predictive analytics using Python and scikit-learn.",
+    //   category: "Machine Learning",
+    //   image: "/uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png",
+    //   technologies: ["Python", "scikit-learn", "Pandas", "Flask"],
+    //   featured: false
+    // },
+    // {
+    //   id: "real-time-analytics",
+    //   title: "Real-time Analytics Dashboard",
+    //   description: "Real-time data analytics dashboard using Apache Kafka and Elasticsearch.",
+    //   category: "Real-time Analytics",
+    //   image: "/uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png",
+    //   technologies: ["Kafka", "Elasticsearch", "React", "Python"],
+    //   featured: false
+    // }
   ];
 
   // Extract unique categories
