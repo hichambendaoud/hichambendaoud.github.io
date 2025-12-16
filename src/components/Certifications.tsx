@@ -23,7 +23,7 @@ const Certifications = () => {
       date: "Jan 2025",
       icon: <LayoutTemplate className="w-5 h-5 text-indigo-400" />,
       color: "bg-indigo-400/10",
-      link: "#" // Add your actual credential URL here
+      link: "https://www.credly.com/badges/07fe0f45-6074-4715-a619-f0c7e95f5bdd/linked_in_profile"
     },
     {
       title: "Generative AI Career Essentials",
@@ -31,7 +31,7 @@ const Certifications = () => {
       date: "Jan 2025",
       icon: <Bot className="w-5 h-5 text-blue-400" />,
       color: "bg-blue-400/10",
-      link: "#"
+      link: "https://www.linkedin.com/learning/certificates/a01e620f0ad5449f7201f4922361877de04fd4680afac9ee73035c84e7ec2d5a?trk=share_certificate"
     },
     {
       title: "Data Analyst Career Path",
@@ -39,7 +39,7 @@ const Certifications = () => {
       date: "Jan 2025",
       icon: <Database className="w-5 h-5 text-emerald-400" />,
       color: "bg-emerald-400/10",
-      link: "#"
+      link: "https://www.linkedin.com/learning/certificates/17b55c6fa86a0350bb153e0e4f2329ee4cb6b3b59d898154e7e4a768801a5f83"
     },
     {
       title: "Power BI",
@@ -47,7 +47,7 @@ const Certifications = () => {
       date: "Nov 2024",
       icon: <BarChart3 className="w-5 h-5 text-amber-400" />,
       color: "bg-amber-400/10",
-      link: "#"
+      link: "https://learn.365datascience.com/certificates/CC-468D5D5867/"
     },
     {
       title: "Introduction to Data Science",
@@ -55,7 +55,7 @@ const Certifications = () => {
       date: "Nov 2024",
       icon: <BookOpen className="w-5 h-5 text-pink-400" />,
       color: "bg-pink-400/10",
-      link: "#"
+      link: "https://learn.365datascience.com/certificates/CC-46384FB54B/"
     },
     {
       title: "Mastering MS Power BI",
@@ -63,7 +63,7 @@ const Certifications = () => {
       date: "Sep 2024",
       icon: <BarChart3 className="w-5 h-5 text-orange-400" />,
       color: "bg-orange-400/10",
-      link: "#"
+      link: "https://udemy-certificate.s3.amazonaws.com/image/UC-89648051-881b-44c9-8d56-f8fb70cd546f.jpg"
     },
     {
       title: "Analyste de Données",
@@ -71,7 +71,7 @@ const Certifications = () => {
       date: "Aug 2024",
       icon: <Database className="w-5 h-5 text-cyan-400" />,
       color: "bg-cyan-400/10",
-      link: "#"
+      link: "https://www.linkedin.com/posts/hicham-ben-daoud-a40a80240_jobintech-certification-dataanalysis-activity-7257907897534230529-wkDj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADv1hdABqwp6yktzsyXHXq-t7v3e7SzrjNw"
     }
   ];
 
