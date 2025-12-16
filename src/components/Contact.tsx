@@ -72,7 +72,7 @@ const Contact = () => {
         {/* Footer Text */}
         <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
           <p className="text-slate-500 text-sm">
-            © 2025 Hicham Ben Daoud. Based in Drâa-Tafilalet, serving the world.
+            © 2025 Hicham Ben Daoud. Based in Morocco, serving the world.
           </p>
         </div>
 
