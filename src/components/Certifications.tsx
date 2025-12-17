@@ -6,7 +6,7 @@ const Certifications = () => {
       degree: "Master In Computer Science",
       institution: "FST Errachidia",
       year: "2021 - 2023",
-      description: "Engineering of Complex Systems. Specialized in Data modeling, Advanced Algorithms, and Research."
+      description: "Ecomputer science and complex systems engineering. Specialized in Data modeling, Advanced Algorithms, and Research."
     },
     {
       degree: "Licence in Software Engineering",
@@ -72,7 +72,23 @@ const Certifications = () => {
       icon: <Database className="w-5 h-5 text-cyan-400" />,
       color: "bg-cyan-400/10",
       link: "https://www.linkedin.com/posts/hicham-ben-daoud-a40a80240_jobintech-certification-dataanalysis-activity-7257907897534230529-wkDj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADv1hdABqwp6yktzsyXHXq-t7v3e7SzrjNw"
-    }
+    },
+    {
+    title: "BigQuery for Data Analysts",
+    issuer: "Google Cloud Skills Boost",
+    date: "Mai 2025",
+    icon: <Database className="w-5 h-5 text-yellow-400" />,
+    color: "bg-yellow-400/10",
+    link: "https://www.skills.google/course_templates/865"
+  },
+  {
+    title: "Databricks Fundamentals",
+    issuer: "Databricks Academy",
+    date: "Mai 2025",
+    icon: <Database className="w-5 h-5 text-red-400" />,
+    color: "bg-red-400/10",
+    link: "https://credentials.databricks.com/31d34b24-892a-4f14-b822-e8ed8485716f"
+  },
   ];
 
   return (
