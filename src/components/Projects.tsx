@@ -13,25 +13,25 @@ const Projects = () => {
       category: "Business Intelligence",
       image: "/uploads/HR_Dashboard/RHdash.png",
       technologies: ["Tableau", "Python"],
-      featured: true
+      featured: false
     },
     {
       id: "customer-segmentation-tableau",
       title: "Marketing Analytics for an E-commerce Website",
       description: "Tableau dashboard performing RFM segmentation and cohort analysis for marketing campaigns.",
-      category: "Data Visualization",
+      category: "Business Intelligence",
       image: "/uploads/Marketing_Analytics/Overview.PNG",
       technologies: ["Tableau", "Python", "Pandas", "SQL"],
-      featured: true
+      featured: false
     },
     {
-      id: "gitex-scraping-analysis", // UPDATED ID to match above
+      id: "gitex-scraping-analysis", 
       title: "Gitex Exhibitor Analysis",
       description: "Web scraping and Power BI dashboard to analyze Gitex exhibitors and trends.",
       category: "Data Science",
       image: "/uploads/Gitex_Web_Scraping/dashboard_preview.png",
       technologies: ["Python", "Power BI", "Web Scraping"],
-      featured: true
+      featured: false
     },
   ];
 
