@@ -18,13 +18,42 @@ const ProjectDetail = () => {
 
   // Project Data matching your portfolio
   const projects: Record<string, any> = {
+    "atlas-labs-hr-dashboard": {
+      title: "Atlas Labs HR & Attrition Analytics",
+      category: "Business Intelligence",
+      description: "A comprehensive Power BI reporting solution for Atlas Labs to monitor workforce metrics, demographics, and attrition.",
+      fullDescription: "An interactive Power BI dashboard designed for Atlas Labs to provide deep insights into their 1,470 employees. The solution is divided into four main sections using bookmarks: Overview, Demographics, Performance Tracker, and Attrition, enabling HR leaders to drill down into the root causes of employee turnover.",
+      image: [
+        "/uploads/atlas-labs-hr-dashboard/3_5_bookmarks_solution_page-0001.jpg",
+        "/uploads/atlas-labs-hr-dashboard/3_5_bookmarks_solution_page-0002.jpg",
+        "/uploads/atlas-labs-hr-dashboard/3_5_bookmarks_solution_page-0003.jpg",
+        "/uploads/atlas-labs-hr-dashboard/3_5_bookmarks_solution_page-0004.jpg"
+      ],
+      technologies: ["Power BI", "DAX", "Data Modeling"],
+      problem: "Atlas Labs needed a centralized way to monitor their workforce of 1,470 employees. They struggled to understand the underlying causes of their 16.1% attrition rate and lacked visibility into employee performance, demographics, and historical hiring trends across their Technology, Sales, and HR departments.",
+      solution: [
+        "Data Modeling: Structured the raw HR data into a robust data model suitable for time-series and categorical analysis.",
+        "DAX Measures: Created dynamic measures for Attrition Rate (16.1%), Active/Inactive Employees, and average performance ratings.",
+        "Interactive Navigation: Implemented an intuitive bookmark-based navigation system with four dedicated views: Overview, Demographics, Performance Tracker, and Attrition.",
+        "Visual Analytics: Built targeted visuals including Attrition by Department/Job Role, Hiring Trends over time, and Job Satisfaction matrices."
+      ],
+      results: [
+        "Identified an overall attrition rate of 16.1%, highlighting specific retention challenges in the Sales and Technology departments.",
+        "Visualized hiring trends from 2012 to 2022, providing clarity on historical workforce growth.",
+        "Correlated performance ratings with job satisfaction and work-life balance to pinpoint drivers of employee turnover.",
+        "Delivered a centralized, automated reporting tool that eliminated manual data aggregation for the HR team."
+      ],
+      links: {
+        demo: "#",
+        code: "https://github.com/hichambendaoud" 
+      }
+    },
     "hr-analytics-dashboard": {
       title: "HR Analytics Dashboard",
       category: "Business Intelligence",
       description: "A comprehensive Tableau dashboard for HR Managers to analyze workforce demographics, income, and attrition trends.",
       fullDescription: "An interactive analytics solution designed to provide HR Managers with both high-level insights and granular employee details. The dashboard facilitates the analysis of hiring trends, demographic distributions, and income correlations to support data-driven workforce decisions.",
-      // Update these paths to your actual HR Dashboard screenshots
-    image: ["/uploads/HR_Dashboard/RHdash.png", "/uploads/HR_Dashboard/DashDetailes.png"],
+      image: ["/uploads/HR_Dashboard/RHdash.png", "/uploads/HR_Dashboard/DashDetailes.png"],
       technologies: ["Tableau", "Python"],
       problem: "HR Managers lacked a unified view of their workforce data. They needed a solution to move away from scattered reports and answer critical questions about employee retention, diversity, and compensation. Specifically, they required a dual-view system: a high-level summary for strategic insights and a detailed list for individual employee records.",
       solution: "I developed a dynamic Tableau dashboard divided into three strategic sections: 'Overview' for KPIs like hiring and active employees, 'Demographics' to analyze age, gender, and education distributions, and 'Income Analysis' to correlate salaries with education and performance. I also implemented a 'Details' sheet allowing for row-level investigation of specific employee records.",
@@ -35,30 +64,10 @@ const ProjectDetail = () => {
         "Streamlined the reporting process by consolidating summary views and detailed records into a single interactive interface."
       ],
       links: {
-        demo: "#", // Add your Tableau Public link here
-        code: "https://github.com/hichambendaoud/tableau-hr-dashboard" // Add your Repo link here
+        demo: "#", 
+        code: "https://github.com/hichambendaoud/tableau-hr-dashboard" 
       }
     },
-    // "customer-segmentation-tableau": {
-    //   title: "Marketing Analytics for an E-commerce Website",
-    //   category: "Data Visualization",
-    //   description: "Tableau dashboard performing RFM segmentation and cohort analysis for marketing campaigns.",
-    //   fullDescription: "Comprehensive customer segmentation analysis using RFM methodology and cohort analysis to identify high-value customer segments for targeted marketing campaigns.",
-    //   image: ["/uploads/Marketing_Analytics/Overview.PNG", "/uploads/Marketing_Analytics/Social_Media.PNG","/uploads/Marketing_Analytics/conversion_Details.PNG","/uploads/Marketing_Analytics/Customer_Review.PNG"],
-    //   technologies: ["Tableau", "Python", "Pandas", "SQL"],
-    //   problem: "Marketing team needed to identify high-value customer segments for targeted campaigns but lacked proper segmentation tools.",
-    //   solution: "Built a comprehensive Tableau dashboard with RFM segmentation and cohort analysis to identify customer patterns and lifetime value.",
-    //   results: [
-    //     "Identified 5 distinct customer segments",
-    //     "Improved campaign targeting by 45%",
-    //     "Increased customer retention by 30%",
-    //     "Reduced customer acquisition costs by 25%"
-    //   ],
-    //   links: {
-    //     demo: "#",
-    //     code: "#"
-    //   }
-    // },
     "customer-segmentation-tableau": {
       title: "ShopEasy Marketing Analytics",
       category: "Business Intelligence",
@@ -67,7 +76,6 @@ const ProjectDetail = () => {
       image: ["/uploads/Marketing_Analytics/Overview.PNG", "/uploads/Marketing_Analytics/conversion_Details.PNG", "/uploads/Marketing_Analytics/Social_Media.PNG", "/uploads/Marketing_Analytics/Customer_Review.PNG"],
       technologies: ["Power BI", "Python", "SQL"],
       problem: "ShopEasy faced a significant decline in customer engagement and conversion rates despite high investments in new marketing campaigns. Specific issues included a drop in social media views in the second half of the year, a need to improve the average customer rating of 3.7 to the target of 4.0, and a lack of visibility into which content types were actually driving interactions.",
-      // Inside your projects object
       solution: [
         "Data Cleaning: Used SQL to clean and structure the raw data, ensuring high accuracy for the analysis.",
         "Sentiment Analysis: Performed advanced analysis with Python to categorize 275+ positive and 82+ negative reviews.",
@@ -80,11 +88,11 @@ const ProjectDetail = () => {
         "Recommended targeting high-performing categories like Kayaks and Baseball Gloves for seasonal promotions to boost sales during low-conversion months like May."
       ],
       links: {
-        demo: "#", // Add your live Power BI link if available
+        demo: "#", 
         code: "https://github.com/hichambendaoud/Marketing-Analytics-Business"
       }
     },
-    "patient-records-analytics": {  // UPDATED ID (was data-visualization-platform)
+    "patient-records-analytics": {  
       title: "Patient Records Analytics",
       category: "Data visaulization",
       description: "A dual-interface analytics solution using Power BI and Streamlit to analyze hospital patient records.",
@@ -104,32 +112,12 @@ const ProjectDetail = () => {
         code: "https://github.com/hichambendaoud/Patient-record"
       }
     },
-    // "etl-pipeline-talend": {
-    //   title: "ETL Pipeline with Talend",
-    //   category: "Data Engineering",
-    //   description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
-    //   fullDescription: "End-to-end ETL pipeline design and implementation using Talend Open Studio for automated customer data integration from multiple sources.",
-    //   image: ["/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png"],
-    //   technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
-    //   problem: "Manual data integration process was time-consuming and error-prone, causing delays in reporting and analysis.",
-    //   solution: "Designed and implemented automated ETL pipelines using Talend Open Studio with robust error handling and data quality checks.",
-    //   results: [
-    //     "Reduced data processing time by 40%",
-    //     "Improved data accuracy by 25%",
-    //     "Automated daily data refresh process",
-    //     "Implemented comprehensive error logging"
-    //   ],
-    //   links: {
-    //     demo: "#",
-    //     code: "#"
-    //   }
-    // },
-    "gitex-scraping-analysis": { // UPDATED ID
+    "gitex-scraping-analysis": { 
       title: "Gitex Exhibitor Analysis",
       category: "Data Science",
       description: "A comprehensive project scraping Gitex exhibitor data to analyze industry trends and Microsoft partnership potential.",
       fullDescription: "An end-to-end data engineering and analytics project focused on the Gitex technology exhibition. I built a Python-based web scraper to extract detailed company profiles, normalized the data for analysis, and developed a Power BI dashboard to identify key industry trends and partnership opportunities.",
-      image: ["/uploads/Gitex_Web_Scraping/dashboard_preview.png"], // Matches your provided path
+      image: ["/uploads/Gitex_Web_Scraping/dashboard_preview.png"], 
       technologies: ["Python", "Power BI", "Pandas", "Web Scraping"],
       problem: "Extracting and analyzing exhibitor data from the Gitex website was a manual, time consuming process. Stakeholders needed a way to quickly identify companies based on specific criteria such as region or technology focus without browsing thousands of individual profile pages.",
       solution: "I developed a Python script (Jupyter Notebook) to automate the extraction of company names, regions, and descriptions. I implemented a 'likelihood analysis' algorithm to score companies based on their potential to integrate Microsoft products using keyword matching. The final dataset was visualized in an interactive Power BI dashboard.",
@@ -149,7 +137,7 @@ const ProjectDetail = () => {
       category: "Data Engineering",
       description: "A centralized data warehouse system for university performance management, automating ETL processes and enabling strategic decision-making.",
       fullDescription: "The 'Digital Factory' project was initiated by the Performance Steering Directorate (DPP) to centralize and valorize academic and administrative data. The goal was to replace manual, error-prone processes with a robust, automated system. I designed a complete architecture comprising an ETL process to ingest data from diverse sources, a data warehouse for historical storage, and interactive Power BI dashboards for strategic KPIs.",
-      image: "/uploads/Digital_Factory_ETL/Digital_Factory_architecturee.png", // Placeholder until you create the diagram
+      image: "/uploads/Digital_Factory_ETL/Digital_Factory_architecturee.png", 
       technologies: ["Talend", "Python", "SQL Server", "SSIS", "Power BI", "UML"],
       problem: "The university's data management faced critical challenges: inconsistent data due to manual entry, scattered information across disparate files, lack of a unified data model, and inefficient manual reporting processes that hindered strategic decision-making.",
       solution: [
@@ -173,7 +161,8 @@ const ProjectDetail = () => {
       title: "Speech-to-Text & Audio Classification System",
       category: "Machine Learning",
       description: "A Deep Learning model for audio classification and text generation integrated into a Django web app.",
-      fullDescription: "An end-to-end Machine Learning project combining Natural Language Processing (NLP) and Audio Analysis. I developed deep learning models using TensorFlow and Keras to classify audio signals and generate text. The models were deployed via a Django web application to provide a user-friendly interface for real-time predictions.",image: ["/uploads/Speech_to_Text/accueil.PNG", "/uploads/Speech_to_Text/service.PNG", "/uploads/Speech_to_Text/Creat_space.PNG", "/uploads/Speech_to_Text/Chose_Langue.PNG", "/uploads/Speech_to_Text/Micro_page.PNG", "/uploads/Speech_to_Text/start_speech.PNG"], 
+      fullDescription: "An end-to-end Machine Learning project combining Natural Language Processing (NLP) and Audio Analysis. I developed deep learning models using TensorFlow and Keras to classify audio signals and generate text. The models were deployed via a Django web application to provide a user-friendly interface for real-time predictions.",
+      image: ["/uploads/Speech_to_Text/accueil.PNG", "/uploads/Speech_to_Text/service.PNG", "/uploads/Speech_to_Text/Creat_space.PNG", "/uploads/Speech_to_Text/Chose_Langue.PNG", "/uploads/Speech_to_Text/Micro_page.PNG", "/uploads/Speech_to_Text/start_speech.PNG"], 
       technologies: ["Python", "TensorFlow", "Keras", "Django", "Librosa"],
       problem: "The goal was to improve the accuracy of automated transcriptions and audio recognition, which required sophisticated deep learning architectures beyond standard models.",
       solution: "I developed custom models using TensorFlow/Keras for audio classification. I integrated these models into a web-based platform using Django. Finally, I wrapped the model in a **Django** web app that allows users to record voice inputs and view real-time transcriptions.",
@@ -211,39 +200,7 @@ const ProjectDetail = () => {
         demo: "#", 
         code: "https://github.com/hichambendaoud/sql-data-warehouse-project"
       }
-    },
-    // "machine-learning-pipeline": {
-    //   title: "Machine Learning Pipeline",
-    //   category: "Machine Learning",
-    //   description: "End-to-end ML pipeline for predictive analytics using Python and scikit-learn.",
-    //   fullDescription: "Complete machine learning workflow from data preprocessing to model deployment, featuring automated feature selection and hyperparameter tuning.",
-    //   image: ["/uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png"],
-    //   technologies: ["Python", "scikit-learn", "Pandas", "Flask"],
-    //   problem: "Manual model training was inefficient and lacked reproducibility.",
-    //   solution: "Built an automated pipeline with version control for data and models.",
-    //   results: [
-    //     "Reduced time-to-production by 50%",
-    //     "Improved model accuracy by 15%",
-    //     "Standardized deployment process"
-    //   ],
-    //   links: { demo: "#", code: "#" }
-    // },
-    // "real-time-analytics": {
-    //   title: "Real-time Analytics Dashboard",
-    //   category: "Real-time Analytics",
-    //   description: "Real-time data analytics dashboard using Apache Kafka and Elasticsearch.",
-    //   fullDescription: "High-throughput real-time analytics platform capable of processing millions of events per second with sub-second latency.",
-    //   image: ["/uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png"],
-    //   technologies: ["Kafka", "Elasticsearch", "React", "Python"],
-    //   problem: "Existing batch processing could not provide immediate insights for time-critical decisions.",
-    //   solution: "Implemented a streaming architecture using Kafka and Elasticsearch.",
-    //   results: [
-    //     "Achieved sub-second data latency",
-    //     "Scaled to handle 50k events/second",
-    //     "Enabled real-time fraud detection"
-    //   ],
-    //   links: { demo: "#", code: "#" }
-    // }
+    }
   };
 
   const project = projects[slug || ""];
@@ -401,7 +358,7 @@ const ProjectDetail = () => {
                 </DialogContent>
               </Dialog>
 
-              {/* Navigation Arrows - Only show if multiple images and not at edges. Always visible on mobile, hover on desktop */}
+              {/* Navigation Arrows */}
               {images.length > 1 && (
                 <>
                   {currentImageIndex > 0 && (
@@ -425,13 +382,10 @@ const ProjectDetail = () => {
                       <ChevronRight className="h-6 w-6" />
                     </button>
                   )}
-                  
-                  {/* Mobile Navigation Controls (Bottom for main carousel too if desired, or rely on swipe) */}
-                  {/* Since swipe is added, we can hide arrows on mobile to clear the view */}
                 </>
               )}
               
-              {/* Dots Indicator - Hidden unless hovering on desktop, visible on mobile if needed but keeping hover logic for cleaner look as requested previously */}
+              {/* Dots Indicator */}
               {images.length > 1 && (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   {images.map((_, idx) => (
@@ -532,12 +486,6 @@ const ProjectDetail = () => {
                     <CardTitle className="text-lg font-bold text-white">Project Links</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6 space-y-4">
-                    {/* <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="block">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold border-0 h-11 shadow-lg shadow-blue-900/20">
-                        <Eye className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </Button>
-                    </a> */}
                     <a href={project.links.code} target="_blank" rel="noopener noreferrer" className="block">
                       <Button variant="outline" className="w-full border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white h-11">
                         <Github className="mr-2 h-4 w-4" />

@@ -7,6 +7,15 @@ import { Link } from "react-router-dom";
 const Projects = () => {
   const projects = [
     {
+      id: "atlas-labs-hr-dashboard",
+      title: "Atlas Labs HR & Attrition Analytics",
+      description: "A comprehensive Power BI dashboard analyzing workforce demographics, performance, and a 16.1% attrition rate.",
+      category: "Business Intelligence",
+      image: "/uploads/atlas-labs-hr-dashboard/3_5_bookmarks_solution_page-0001.jpg", // TODO: Update with your actual image path
+      technologies: ["Power BI", "DAX", "Data Modeling"],
+      featured: true
+    },
+    {
       id: "hr-analytics-dashboard",
       title: "HR Analytics Dashboard",
       description: "An interactive Tableau dashboard built to consolidate HR data and reveal key workforce metrics and trends.",

@@ -11,7 +11,17 @@ const ProjectsList = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const allProjects = [
-  {
+    {
+      id: "atlas-labs-hr-dashboard",
+      title: "Atlas Labs HR & Attrition Analytics",
+      description: "A comprehensive Power BI reporting solution for Atlas Labs to monitor workforce metrics, demographics, and attrition.",
+      category: "Business Intelligence",
+      image: "/uploads/atlas-labs-hr-dashboard/3_5_bookmarks_solution_page-0001.jpg", // TODO: Update with actual image
+      technologies: ["Power BI", "DAX", "Data Modeling"],
+      code: "https://github.com/hichambendaoud",
+      featured: true
+    },
+    {
       id: "hr-analytics-dashboard",
       title: "HR Analytics Dashboard",
       description: "An interactive Tableau dashboard built to consolidate HR data and reveal key workforce metrics and trends.",
@@ -21,17 +31,17 @@ const ProjectsList = () => {
       code: "https://github.com/hichambendaoud/tableau-hr-dashboard",
       featured: false
     },
-   {
+    {
       id: "customer-segmentation-tableau",
       title: "ShopEasy Marketing Analytics",
-      description: "A Power BI dashboard using SQL and Python to analyze marketing ROI and customer sentiment.", // Shortened to fit
+      description: "A Power BI dashboard using SQL and Python to analyze marketing ROI and customer sentiment.",
       category: "Business Intelligence",
       image: "/uploads/Marketing_Analytics/Overview.PNG",
       technologies: ["Power BI", "Python", "SQL"],
       code: "https://github.com/hichambendaoud/Marketing-Analytics-Business",
       featured: false
     },
-      {
+    {
       id: "patient-records-analytics",
       title: "Patient Records Analytics",
       description: "Hospital patient record analysis using Power BI, Streamlit, and Python.",
@@ -41,7 +51,7 @@ const ProjectsList = () => {
       featured: false 
     },
     {
-      id: "gitex-scraping-analysis", // UPDATED ID to match above
+      id: "gitex-scraping-analysis",
       title: "Gitex Exhibitor Analysis",
       description: "Web scraping and Power BI dashboard to analyze Gitex exhibitors and trends.",
       category: "Data Science",
@@ -76,34 +86,7 @@ const ProjectsList = () => {
       technologies: ["SQL Server", "ETL", "Data Modeling", "TSQL"],
       code: "https://github.com/hichambendaoud/sql-data-warehouse-project",
       featured: false
-    },
-    // {
-    //   id: "etl-pipeline-talend",
-    //   title: "ETL Pipeline with Talend",
-    //   description: "Automated ETL pipeline for customer data integration using Talend Open Studio.",
-    //   category: "Data Engineering",
-    //   image: "/uploads/47c40655-58cc-4a2c-a7ee-90e66e510247.png",
-    //   technologies: ["Talend", "SQL", "Python", "Azure Data Factory"],
-    //   featured: false
-    // },
-    // {
-    //   id: "machine-learning-pipeline",
-    //   title: "Machine Learning Pipeline",
-    //   description: "End-to-end ML pipeline for predictive analytics using Python and scikit-learn.",
-    //   category: "Machine Learning",
-    //   image: "/uploads/d930e88d-54f3-467f-aeca-3f831210e27d.png",
-    //   technologies: ["Python", "scikit-learn", "Pandas", "Flask"],
-    //   featured: false
-    // },
-    // {
-    //   id: "real-time-analytics",
-    //   title: "Real-time Analytics Dashboard",
-    //   description: "Real-time data analytics dashboard using Apache Kafka and Elasticsearch.",
-    //   category: "Real-time Analytics",
-    //   image: "/uploads/7bcaa7dc-b7f5-4790-a46a-428bdb2b0179.png",
-    //   technologies: ["Kafka", "Elasticsearch", "React", "Python"],
-    //   featured: false
-    // }
+    }
   ];
 
   // Extract unique categories
