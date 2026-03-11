@@ -3,10 +3,10 @@ import {
   Database, 
   LayoutGrid, 
   BarChart4, 
-  FileCode2,
   LineChart,
   Brain,
-  Network
+  Network,
+  Snowflake
 } from "lucide-react";
 
 const Skills = () => {
@@ -20,7 +20,7 @@ const Skills = () => {
       icon: <BarChart4 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
     },
     { 
-      name: "SQL", 
+      name: "SQL Server", 
       icon: <Database className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
     },
     { 
@@ -38,11 +38,11 @@ const Skills = () => {
     { 
       name: "Azure", 
       icon: <LayoutGrid className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    },
+    { 
+      name: "Snowflake", 
+      icon: <Snowflake className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
     }
-    // { 
-    //   name: "Django", 
-    //   icon: <FileCode2 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
-    // }
   ];
 
   return (

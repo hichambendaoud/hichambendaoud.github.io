@@ -31,17 +31,17 @@ const Projects = () => {
       category: "Business Intelligence",
       image: "/uploads/Marketing_Analytics/Overview.PNG",
       technologies: ["Tableau", "Python", "Pandas", "SQL"],
-      featured: false
-    },
-    {
-      id: "gitex-scraping-analysis", 
-      title: "Gitex Exhibitor Analysis",
-      description: "Web scraping and Power BI dashboard to analyze Gitex exhibitors and trends.",
-      category: "Data Science",
-      image: "/uploads/Gitex_Web_Scraping/dashboard_preview.png",
-      technologies: ["Python", "Power BI", "Web Scraping"],
-      featured: false
-    },
+      featured: false}
+    // ,
+    // {
+    //   id: "gitex-scraping-analysis", 
+    //   title: "Gitex Exhibitor Analysis",
+    //   description: "Web scraping and Power BI dashboard to analyze Gitex exhibitors and trends.",
+    //   category: "Data Science",
+    //   image: "/uploads/Gitex_Web_Scraping/dashboard_preview.png",
+    //   technologies: ["Python", "Power BI", "Web Scraping"],
+    //   featured: false
+    // },
   ];
 
   return (
