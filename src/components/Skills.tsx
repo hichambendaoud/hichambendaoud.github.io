@@ -38,11 +38,11 @@ const Skills = () => {
     { 
       name: "Azure", 
       icon: <LayoutGrid className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
-    },
-    { 
-      name: "Django", 
-      icon: <FileCode2 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
     }
+    // { 
+    //   name: "Django", 
+    //   icon: <FileCode2 className="h-8 w-8 md:h-9 md:w-9 mb-2 opacity-80 group-hover:opacity-100 transition-opacity" /> 
+    // }
   ];
 
   return (
