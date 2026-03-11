@@ -36,7 +36,7 @@ const Hero = () => {
             View My Work
           </Button>
           
-          <a href="/public/pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="public/pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer">
             <Button
               variant="outline"
               size="lg"
