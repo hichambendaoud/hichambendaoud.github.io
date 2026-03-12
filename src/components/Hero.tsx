@@ -51,7 +51,7 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="/pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="./pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="w-full h-12 px-8 text-base border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-105">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
