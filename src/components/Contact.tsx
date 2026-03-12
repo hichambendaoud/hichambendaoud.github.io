@@ -1,15 +1,20 @@
 import { Card } from "@/components/ui/card";
-import { Mail } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-[#020817] text-slate-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="contact" className="py-20 lg:py-32 bg-[#0B1120] relative overflow-hidden text-slate-200">
+      
+      {/* Background Glows for consistency with Hero/Experience */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         
-        {/* Header */}
+        {/* Header with Gradient Text */}
         <div className="mb-12 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white tracking-tight">
-            Ready to Optimize Your Business?
+            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Optimize Your Business?</span>
           </h2>
           <p className="text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Whether you need a one-off dashboard or a full-scale data pipeline, 
@@ -17,36 +22,42 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Cards */}
+        {/* Contact Cards with Glassmorphism and Glow on Hover */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-16 animate-fade-in">
           
+          {/* Email Card */}
           <a 
             href="mailto:hichambendaoudofficiel@gmail.com"
-            className="w-full md:w-auto min-w-[300px] group"
+            className="w-full md:w-auto min-w-[320px] group"
           >
-            <Card className="bg-[#0f172a] border-slate-800 p-6 transition-all duration-300 cursor-pointer hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:border-blue-500/50 hover:-translate-y-1">
-              <div className="flex items-center justify-center gap-4">
+            <Card className="bg-slate-900/40 backdrop-blur-md border-slate-800 p-6 transition-all duration-500 cursor-pointer hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:border-blue-500/50 hover:-translate-y-1 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              <div className="flex items-center justify-center gap-4 relative z-10">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors duration-300">
-                  <Mail className="w-6 h-6 text-blue-500" />
+                  <Mail className="w-6 h-6 text-blue-400" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mb-1">Email Me</p>
                   <p className="text-slate-200 font-semibold text-sm md:text-base group-hover:text-blue-400 transition-colors">
-                    hichambendaoudofficiel<span className="text-blue-500 font-bold"> [at] </span>gmail<span className="text-blue-500 font-bold"> [dot] </span>com
+                    hichambendaoudofficiel<span className="text-blue-500 font-bold mx-0.5">[at]</span>gmail<span className="text-blue-500 font-bold mx-0.5">[dot]</span>com
                   </p>
                 </div>
               </div>
             </Card>
           </a>
 
+          {/* WhatsApp Card */}
           <a 
             href="https://wa.me/212694131308" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full md:w-auto min-w-[300px] group"
+            className="w-full md:w-auto min-w-[320px] group"
           >
-            <Card className="bg-[#0f172a] border-slate-800 p-6 transition-all duration-300 cursor-pointer hover:shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:border-green-500/50 hover:-translate-y-1">
-              <div className="flex items-center justify-center gap-4">
+            <Card className="bg-slate-900/40 backdrop-blur-md border-slate-800 p-6 transition-all duration-500 cursor-pointer hover:shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:border-green-500/50 hover:-translate-y-1 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              <div className="flex items-center justify-center gap-4 relative z-10">
                 <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors duration-300">
                   <svg 
                     className="w-6 h-6 text-green-500" 
@@ -70,7 +81,7 @@ const Contact = () => {
         </div>
 
         {/* Footer Text */}
-        <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+        <div className="animate-fade-in pt-8 border-t border-slate-800/50" style={{ animationDelay: '200ms' }}>
           <p className="text-slate-500 text-sm">
             © 2025 Hicham Ben Daoud. Based in Morocco, serving the world.
           </p>
