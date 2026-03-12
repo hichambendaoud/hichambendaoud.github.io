@@ -21,10 +21,11 @@ const Hero = () => {
           
           {/* Contenu Texte */}
           <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
-            
-            {/* Badge animé "Available for new opportunities" */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-blue-400 text-sm font-medium mb-6 animate-[pulse_2.5s_ease-in-out_infinite] shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-              <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-blue-400 text-sm font-medium mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
               Available for new opportunities
             </div>
             
@@ -44,7 +45,8 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-              <a href="/projects" className="w-full sm:w-auto">
+              {/* Dirna href="#projects" bach yhbt l section dyal projects smoothly */}
+              <a href="#projects" className="w-full sm:w-auto">
                 <Button size="lg" className="w-full h-12 px-8 text-base bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/25 group">
                   View My Work
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -75,7 +77,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Visuel / Photo */}
+          {/* Visuel / Photo - Smaller and Better Proportioned */}
           <div className="flex-1 relative animate-fade-in order-1 lg:order-2">
             <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] mx-auto">
               {/* Cercle lumineux de fond */}

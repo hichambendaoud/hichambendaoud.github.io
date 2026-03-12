@@ -1,4 +1,4 @@
-import { useState, useRef, TouchEvent } from "react";
+import { useState, useRef, TouchEvent, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,10 +11,10 @@ const ProjectDetail = () => {
   const { slug } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Swipe state
+  // Swipe state - reduced minimum distance for faster/more responsive swiping
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 30;
 
   // Project Data
   const projects: Record<string, any> = {
@@ -180,7 +180,28 @@ const ProjectDetail = () => {
   };
 
   const project = projects[slug || ""];
-  
+
+  const images = project ? (Array.isArray(project.image) ? project.image : [project.image]) : [];
+
+  // Callbacks for ultra-fast navigation
+  const handleNextImage = useCallback(() => {
+    if (currentImageIndex < images.length - 1) setCurrentImageIndex(prev => prev + 1);
+  }, [currentImageIndex, images.length]);
+
+  const handlePrevImage = useCallback(() => {
+    if (currentImageIndex > 0) setCurrentImageIndex(prev => prev - 1);
+  }, [currentImageIndex]);
+
+  // Keyboard navigation for fast switching
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") handleNextImage();
+      if (e.key === "ArrowLeft") handlePrevImage();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleNextImage, handlePrevImage]);
+
   if (!project) {
     return (
       <div className="min-h-screen bg-[#0B1120] text-slate-200 flex flex-col">
@@ -201,14 +222,23 @@ const ProjectDetail = () => {
     );
   }
 
-  const images = Array.isArray(project.image) ? project.image : [project.image];
-
-  const handleNextImage = () => {
-    if (currentImageIndex < images.length - 1) setCurrentImageIndex(prev => prev + 1);
+  const onTouchStart = (e: TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
   };
 
-  const handlePrevImage = () => {
-    if (currentImageIndex > 0) setCurrentImageIndex(prev => prev - 1);
+  const onTouchMove = (e: TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) handleNextImage();
+    if (isRightSwipe) handlePrevImage();
   };
 
   return (
@@ -232,37 +262,93 @@ const ProjectDetail = () => {
             </Link>
           </div>
 
-          {/* Featured Visual */}
+          {/* Featured Visual with Fast Carousel */}
           <div className="relative mb-16 animate-fade-in group">
-            <div className="overflow-hidden rounded-3xl border border-slate-800/60 bg-[#0F172A]/60 backdrop-blur-xl shadow-2xl relative">
+            <div 
+              className="overflow-hidden rounded-3xl border border-slate-800/60 bg-[#0F172A]/60 backdrop-blur-xl shadow-2xl relative flex items-center justify-center min-h-[300px] md:min-h-[500px]"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <img
+                key={currentImageIndex} // Forces a quick re-render animation when changing image
                 src={images[currentImageIndex]}
                 alt={project.title}
-                className="w-full max-h-[650px] object-contain bg-[#020817]/40"
+                className="w-full max-h-[650px] object-contain bg-[#020817]/40 animate-in fade-in zoom-in-[0.98] duration-200"
               />
               
+              {/* Fullscreen Dialog */}
               <Dialog>
                 <DialogTrigger asChild>
                   <button className="absolute top-6 right-6 p-3 rounded-xl bg-black/60 text-white opacity-0 group-hover:opacity-100 hover:bg-blue-600 transition-all duration-300 backdrop-blur-md border border-white/10 z-10">
                     <Maximize2 className="h-5 w-5" />
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-[95vw] h-[90vh] bg-[#0B1120]/98 border-slate-800 p-2">
-                  <img src={images[currentImageIndex]} className="w-full h-full object-contain" alt="Fullscreen view" />
+                {/* Fixed the overflow issue by using max-h-[95vh] and wrapping the image perfectly */}
+                <DialogContent className="max-w-[95vw] h-[95vh] bg-[#0B1120]/98 border-slate-800 p-2 sm:p-6 flex flex-col items-center justify-center overflow-hidden">
+                  <div 
+                    className="relative w-full h-full flex items-center justify-center"
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                  >
+                    <img 
+                      key={`fs-${currentImageIndex}`}
+                      src={images[currentImageIndex]} 
+                      className="max-w-full max-h-full object-contain animate-in fade-in zoom-in-[0.98] duration-200" 
+                      alt="Fullscreen view" 
+                    />
+
+                    {/* Navigation Arrows inside Fullscreen */}
+                    {images.length > 1 && (
+                      <>
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); handlePrevImage(); }} 
+                          disabled={currentImageIndex === 0} 
+                          className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-2xl bg-black/50 text-white hover:bg-blue-600 disabled:opacity-0 transition-all z-50 backdrop-blur-sm border border-white/10"
+                        >
+                          <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
+                        </button>
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); handleNextImage(); }} 
+                          disabled={currentImageIndex === images.length - 1} 
+                          className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 p-3 sm:p-4 rounded-2xl bg-black/50 text-white hover:bg-blue-600 disabled:opacity-0 transition-all z-50 backdrop-blur-sm border border-white/10"
+                        >
+                          <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </DialogContent>
               </Dialog>
 
+              {/* Normal View Navigation Arrows */}
               {images.length > 1 && (
                 <>
-                  <button onClick={handlePrevImage} disabled={currentImageIndex === 0} className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-2xl bg-black/40 text-white opacity-0 group-hover:opacity-100 hover:bg-blue-600 disabled:opacity-0 transition-all hidden md:block">
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); handlePrevImage(); }} 
+                    disabled={currentImageIndex === 0} 
+                    className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-2xl bg-black/40 text-white opacity-0 group-hover:opacity-100 hover:bg-blue-600 disabled:opacity-0 transition-all hidden md:block z-10"
+                  >
                     <ChevronLeft className="h-6 w-6" />
                   </button>
-                  <button onClick={handleNextImage} disabled={currentImageIndex === images.length - 1} className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-2xl bg-black/40 text-white opacity-0 group-hover:opacity-100 hover:bg-blue-600 disabled:opacity-0 transition-all hidden md:block">
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); handleNextImage(); }} 
+                    disabled={currentImageIndex === images.length - 1} 
+                    className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-2xl bg-black/40 text-white opacity-0 group-hover:opacity-100 hover:bg-blue-600 disabled:opacity-0 transition-all hidden md:block z-10"
+                  >
                     <ChevronRight className="h-6 w-6" />
                   </button>
-                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md">
+                  
+                  {/* Dots */}
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md z-10">
                     {images.map((_, idx) => (
-                      <div key={idx} className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIndex ? 'bg-blue-400 w-6' : 'bg-white/30'}`} />
+                      <button 
+                        key={idx} 
+                        onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'bg-blue-400 w-6' : 'bg-white/30 hover:bg-white/60'}`} 
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
                     ))}
                   </div>
                 </>
