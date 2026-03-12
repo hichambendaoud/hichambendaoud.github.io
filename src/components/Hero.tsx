@@ -5,7 +5,7 @@ const Hero = () => {
   // Liste des réseaux sociaux avec les composants d'icônes
   const socials = [
     { Icon: Github, href: "https://github.com/hichambendaoud", label: "GitHub" },
-    { Icon: Linkedin, href: "https://linkedin.com/in/hichambendaoud", label: "LinkedIn" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/hicham-ben-daoud-a40a80240/", label: "LinkedIn" },
     { Icon: Mail, href: "mailto:hichambendaoudofficiel@gmail.com", label: "Email" }
   ];
 
