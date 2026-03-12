@@ -21,11 +21,10 @@ const Hero = () => {
           
           {/* Contenu Texte */}
           <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-blue-400 text-sm font-medium mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
+            
+            {/* Badge animé "Available for new opportunities" */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-blue-400 text-sm font-medium mb-6 animate-[pulse_2.5s_ease-in-out_infinite] shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+              <span className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_#3b82f6]" />
               Available for new opportunities
             </div>
             
@@ -51,7 +50,7 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="./pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="/pdf/CV_Hicham_Ben_Daoud.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="w-full h-12 px-8 text-base border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-105">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
@@ -76,7 +75,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Visuel / Photo - Smaller and Better Proportioned */}
+          {/* Visuel / Photo */}
           <div className="flex-1 relative animate-fade-in order-1 lg:order-2">
             <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] mx-auto">
               {/* Cercle lumineux de fond */}
