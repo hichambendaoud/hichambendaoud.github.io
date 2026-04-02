@@ -1,25 +1,43 @@
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Briefcase, Building2, Bot } from "lucide-react";
+import { MapPin, Briefcase, Building2, Bot, LineChart } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
       id: 1,
+      role: "Business & Data Analyst Intern",
+      company: "AGH DATA AGENCY HOLDING SA",
+      location: "Remote",
+      period: "Jan 2026 - Mar 2026",
+      icon: <LineChart className="w-5 h-5" />,
+      active: true,
+      achievements: [
+        "Conducted competitive benchmarking to map the market landscape, authored Agile User Stories, and modeled business workflows using BPMN/UML diagrams for a mobile app project.",
+        "Structured the functional backlog within Odoo ERP and produced modular feature documentation.",
+        "Designed Python scraping scripts (BeautifulSoup, Scrapy) and queried public APIs to collect 800–1,000 records, enforcing strict quality checkpoints (D+3, D+7, D+10).",
+        "Cleaned and normalized datasets, handled missing values, and stored structured outputs in SQL/CSV databases.",
+        "Documented all data sources in a comprehensive data dictionary complete with reliability scores.",
+        "Delivered interactive dashboards (Power BI) surfacing KPIs such as data volume, usability rate, category breakdown, and anomaly detection.",
+        "Ensured rigorous data quality management and GDPR compliance throughout the project lifecycle."
+      ]
+    },
+    {
+      id: 2,
       role: "Data Analyst Trainee",
       company: "JobInTech",
       location: "Rabat, Morocco",
       period: "Apr 2024 - Aug 2024",
       icon: <Briefcase className="w-5 h-5" />,
-      active: true,
+      active: false,
       achievements: [
-        "Designed and automated ETL pipelines (Talend, Python, SSIS) to streamline data processing, reducing preparation time by 30%",
-        "Developed optimized SQL queries and created Power BI dashboards (DAX) to track strategic KPIs",
-        "Implemented a data quality control system, improving analysis reliability by 25%",
-        "Collaborated in Agile Scrum mode with stakeholders to align analyses with business needs"
+        "Designed and automated ETL pipelines (Talend, Python, SSIS) to streamline data processing, reducing preparation time by 30%.",
+        "Developed optimized SQL queries and created Power BI dashboards (DAX) to track strategic KPIs.",
+        "Implemented a data quality control system, improving analysis reliability by 25%.",
+        "Collaborated in Agile Scrum mode with stakeholders to align analyses with business needs."
       ]
     },
     {
-      id: 2,
+      id: 3,
       role: "Machine Learning Engineer Intern (PFE)",
       company: "ZJS CONSULTING",
       location: "Remote",
@@ -27,9 +45,9 @@ const Experience = () => {
       icon: <Bot className="w-5 h-5" />,
       active: false,
       achievements: [
-        "Developed a text generation and audio classification model using Python, TensorFlow, and Keras",
-        "Created a web application (Django) integrating an ML API for speech recognition, achieving a 15% increase in transcription accuracy",
-        "Authored comprehensive technical documentation to ensure result reproducibility"
+        "Developed a text generation and audio classification model using Python, TensorFlow, and Keras.",
+        "Created a web application (Django) integrating an ML API for speech recognition, achieving a 15% increase in transcription accuracy.",
+        "Authored comprehensive technical documentation to ensure result reproducibility."
       ]
     }
   ];
