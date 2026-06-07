@@ -51,12 +51,13 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <a href="public/pdf/CV_Hicham_Ben_daoud.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full h-12 px-8 text-base border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-105">
+              
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-105">
+                <a href="/pdf/CV_Hicham_Ben_daoud.pdf" download="CV_Hicham_Ben_daoud.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
-                </Button>
-              </a>
+                </a>
+              </Button>
             </div>
 
             {/* Réseaux Sociaux */}
