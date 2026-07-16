@@ -19,6 +19,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
+          {}
           {/* Contenu Texte */}
           <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
             
@@ -43,6 +44,7 @@ const Hero = () => {
               I transform complex data into clear, actionable business insights. Specializing in Business Intelligence, data visualization, and analytical workflows to drive strategic decisions.
             </p>
             
+            {}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
               {/* Dirna href="#projects" bach yhbt l section dyal projects smoothly */}
               <a href="#projects" className="w-full sm:w-auto">
@@ -53,13 +55,15 @@ const Hero = () => {
               </a>
               
               <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 rounded-full transition-all duration-300 hover:scale-105">
-                <a href="/pdf/CV_Hicham_Ben_daoud.pdf" download="CV_Hicham_Ben_daoud.pdf" target="_blank" rel="noopener noreferrer">
+                {/* Removed the download attribute to enable preview in a new tab */}
+                <a href="/pdf/CV_Hicham_Ben_daoud.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   Download CV
                 </a>
               </Button>
             </div>
 
+            {}
             {/* Réseaux Sociaux */}
             <div className="flex items-center justify-center lg:justify-start gap-4">
               {socials.map((social, idx) => (
@@ -77,6 +81,7 @@ const Hero = () => {
             </div>
           </div>
 
+          {}
           {/* Visuel / Photo - Smaller and Better Proportioned */}
           <div className="flex-1 relative animate-fade-in order-1 lg:order-2">
             <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px] mx-auto">
@@ -97,6 +102,7 @@ const Hero = () => {
                 </div>
               </div>
 
+              {}
               {/* Badges Flottants Animés */}
               
               {/* Business Insights */}
@@ -128,6 +134,7 @@ const Hero = () => {
         </div>
       </div>
 
+      {}
       {/* Scroll indicator for desktop */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-30">
         <div className="w-[1px] h-12 bg-gradient-to-b from-blue-500 to-transparent"></div>
